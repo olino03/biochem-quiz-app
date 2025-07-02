@@ -109,9 +109,11 @@ function startQuiz() {
 
   if (quizMode === 'test') {
     timerDiv.classList.remove('hidden');
+    homeButton.style.display = 'none'; // Hide home button in test mode
     startTimer(TIME_LIMIT);
   } else {
     timerDiv.classList.add('hidden');
+    homeButton.style.display = 'block'; // Ensure home button is visible in training mode
   }
   
   renderQuestion();
@@ -123,7 +125,7 @@ function renderQuestion() {
   const isLastQuestion = currentIndex === selectedQuestions.length - 1;
 
   nextButton.innerText = isLastQuestion ? 'Finish' : 'Next';
-  questionNumberDiv.innerText = `Question ${currentIndex + 1} of ${selectedQuestions.length}`;
+  questionNumberDiv.innerText = `Intrebarea ${currentIndex + 1} of ${selectedQuestions.length}`;
   questionTextDiv.innerText = question.text;
   feedbackDiv.innerText = "";
   
