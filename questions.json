@@ -218,7 +218,7 @@
                 "Pentru soluţiile aceluiaşi solvit şi de aceeaşi concentraţie este invers proporţională cu \ntemperatura;",
                 "Presiunea osmotica a unei soluţii diluate şi neelectrolitice depinde de natura solventului;"
             ],
-            "correct": null
+            "correct": 0
         },
         {
             "text": "Presiunea osmotica:",
@@ -228,7 +228,7 @@
                 "Pentru soluţiile aceluiaşi solvit şi de aceeaşi concentraţie este direct proporţională cu \ntemperatura;",
                 "Presiunea osmotica a unei soluţii diluate şi neelectrolitice depinde de natura solventului;"
             ],
-            "correct": null
+            "correct": 0
         },
         {
             "text": "Soluţiile care au presiunile osmotice egale se numesc:",
@@ -258,7 +258,7 @@
                 "Presiunea osmotică dezvoltată de un mol de substanţă nedisociabilă dizolvat într-un litru de \napă;",
                 "Presiunea osmotică dezvoltată de un mol de substanţă disociabilă dizolvat într-un mililitru de \napă;"
             ],
-            "correct": null
+            "correct": 2
         },
         {
             "text": "Presiunea osmotică pentru soluţiile aceluiaşi solvit si aflate la aceeaşi temperatură:",
@@ -308,7 +308,7 @@
                 "Forțele superficiale au tendinţa de a mari suprafaţa lichidului şi sunt cu atât mai mari cu cât \nlungimea pe care se exercită este mai mare.",
                 "Între moleculele stratului superficial se exercită forţe tangentiale la suprafața  numite forţe de \nfrecare."
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Care din urmatoarele afirmatii este adevarata?",
@@ -318,7 +318,7 @@
                 "Tensiunea superficiala determina coborarea apei in tuburile capilare;",
                 "Unitatea de măsură în sistemul internațional pentru coeficientul de tensiune superficială este \nKg/m."
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Care din urmatoarele afirmatii este adevarata?",
@@ -408,7 +408,7 @@
                 "cantitatea de substanta transportată pe unitatea de arie aşezată perpendicular pe direcţia de \ntransport;",
                 "este o marime scalara;"
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "In cazul difuziei, transportul de substanţă:",
@@ -568,7 +568,7 @@
                 "celulele parenchimatice intră în alcătuirea țesuturile de apărare, asimilatoare, aerifere, \nabsorbante, de depozitare, sensitive etc",
                 "celulele prozenchimatice sunt lungi, de regulă înguste şi cu pereţii îngroşaţi și caracterizează \nîndeosebi ţesuturile conducătore şi mecanice"
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Selectați afirmația incorectă referitoare la ţesuturile vegetale",
@@ -588,7 +588,7 @@
                 "sinteza este indusă de IL-4, produsă de LTH2",
                 "zona balama nu este foarte flexibilă și nu favorizează căutarea şi recunoaşterea Ag, numărul \npunţilor disulfurice din aceasta variind între subclasele de IgG"
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Alegeți afirmația greșită referitoare la IgM",
@@ -678,7 +678,7 @@
                 "sunt glicoproteine",
                 "se cunosc Ig membranare (BCR) şi Ig solubile (secretate)"
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Precizați care afirmație referitoare la distribuţia tisulara a moleculelor MHC I şi II este incorectă",
@@ -728,7 +728,7 @@
                 "cand celula somatică respectivă cooperează cu limfocitelor citotoxice sau limfocitele \nsupresoare, aceste limfocite recunosc mai intai lanţul β.",
                 "au funcţii in cooperarea celulară, prezentarea Ag şi rejetul grefelor"
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Selectați afirmația greșită referitoare la funcțiile moleculelor MHC II",
@@ -748,7 +748,7 @@
                 "domeniile α2 şi β2 sunt identice pentru toate celulele din organism, şi reprezintă domeniile \nmonomorfe ale MHC II",
                 "se găsesc numai pe membranele celulelor cu rol de APC (celule dendritice, macrofage, \nlimfocite)"
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Selectați afirmația greșită referitoare la semnificaţia evolutiva a moleculelor MHC I şi II",
@@ -768,7 +768,7 @@
                 "domeniul α 3 (constant sau monomorf) nu are rol structural și nu este identic pentru toate \ncelulele din organism",
                 "lanţul β (β 2-microglobulina) este constant pentru toţi indivizii unei specii, are o greutate \nmoleculară mică şi este legat de domeniul α 3."
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Selectati afirmatia incorecta referitoare la moleculele prezentatoare ale epitopilor:",
@@ -1168,7 +1168,7 @@
                 "4,28; 9,8; respectiv 2,4",
                 "6; 9,1; respectiv 2,1"
             ],
-            "correct": 0
+            "correct": 2
         },
         {
             "text": "Monozaharidele au formula empirică (CH2)_n_, unde _n_ are valoarea egală sau mai mare de:",
@@ -1198,7 +1198,7 @@
                 "configuraţiei atomului de carbon asimetric care cuprinde atomul de carbon carbonilic",
                 "faptului că molecula roteşte planul luminii polarizate spre dreapta sau spre stânga"
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Monozaharidele sunt stabile la fierbere cu:",
@@ -1328,7 +1328,7 @@
                 "diacilglicerol, în care una din grupările hidroxil primare ale glicerolului este esterificată cu acid \nfosforic",
                 "triacilglicerol, în care toate grupările hidroxil secundare sunt esterificate cu acidul fosforic"
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Care este sarcina netă a fosfatidilserinei la _p_H 7?",
@@ -1488,7 +1488,7 @@
                 "izocitratul  se  oxidează foarte uşor în treapta următoare a ciclului, deplasând reacţia aconitazei \nspre formarea izocitra-tului",
                 "izocitratul, spre deosebire de citrat, este un compus macroergic"
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Majoritatea microorganismelor, a ţesuturilor animalelor superioare şi plantelor conţin 2 tipuri de \nizocitrat dehidrogenază. Ani de zile a existat o controversă privind care dintre ele este \nrăspunzătoare de oxidarea izocitratului la α-cetoglutarat în ciclul acizilor tricarboxilici. Un tip de \n_izoci__­trat dehidrogenază_ necesită NAD+ ca acceptor de electroni, iar celălalt necesită NADP+ \n. Reacţiile globale catalizate de cele două tipuri de izocitrat dehidrogenaze sunt identice: Izocitrat \n+ NAD+(NADP+) ↔ α-cetoglutarat + CO2 + NADH(NADPH) + H+. Ambele enzime apar în \nmitocondrii, dar enzima NADP-dependentă se găseşte şi în citosol. Izocitrat dehidrogenaza NAD-\ndependentă este puţin activă ca atare. Care enzimă participă la transformările din ciclul Krebs şi \nde ce?",
@@ -1498,7 +1498,7 @@
                 "Izocitrat dehidrogenaza NADP‑dependentă, deoarece este o enzimă allosterică, care este \nactivată de ATP",
                 "Izocitrat dehidrogenaza NAD‑dependentă, deoarece deşi ca atare enzima este puţin activă ΔGo' \n= -5,0 kcal·mol-1 şi reacţia este împinsă spre dreapta"
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "_Complexul α-cetoglutarat dehidrogenazei_ catalizează reacţia: α-cetoglutarat + NAD+ + CoA ↔ \nsuccinil-CoA + CO2 + NADH + H+. Reacţia este analogă oxidării piruvatului la acetil-CoA şi \nCO2. Care din următoarele coenzime nu participă la reacţia catalizată de _complexul α-\ncetoglutarat dehidrogenazei_?",
@@ -1608,7 +1608,7 @@
                 "NADH → FMNH2 → FP1(Fe·S) → QH2 → (2Fe·S) → cit a-cit a3 → cit b → O2",
                 "NADH → FMNH2 → FP1(Fe·S) → (2Fe·S) → cit. b (Fe·S)cit.c1 → QH2 → cit a-cit a3 → \nO2"
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Câte locuri (situsuri) de formare a ATP există de‑a lungul lanţului transportor de electroni?",
@@ -3068,7 +3068,7 @@
                 "indivizii trăiesc în habitate omogene din punct de vedere al factorilor de mediu;",
                 "indivizii evită acele zone din habitat în care factorii de mediu se abat de la optim și se \naglomerează în zonele cu optim ecologic."
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "La mamifere clasa adulților (clasa reproductivă) cuprinde indivizii aflați:",
@@ -3088,7 +3088,7 @@
                 "între ultima reproducere și moarte;",
                 "între prima și ultima reproducere."
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Referitor la clasele de vârstă existente la plante, plantele generative sunt:",
@@ -3178,7 +3178,7 @@
                 "dinamica sistemului pradă – prădător urmează două curbe sinusoide, ușor decalate una fata de \ncealaltă si care se repeta la anumite intervale de timp, doar dacă sistemul nu este perturbat de forțe \nexterne.",
                 "doar în prezența unei forțe externe perturbatoare dinamica sistemului pradă – prădător va urma \ndouă curbe sinusoide."
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Pentru a studia în laborator relația pradă – prădător, cercetătorul Gause a folosit următoarele două \nspecii:",
@@ -3198,7 +3198,7 @@
                 "legea lui Allen;",
                 "principiul lui Allee referitor la densitatea optimă a speciei pradă și a speciei de prădător."
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Prădătorismul este:",
@@ -3218,7 +3218,7 @@
                 "este factor al selecției naturale, determinând în timp apariția de adaptări ale speciilor pradă și \nprădătoare;",
                 "nu este factor de reglare a mărimii populațiilor."
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "S-a constatat ca tratarea îndelungată a unei păduri cu insecticide (pentru combaterea insectelor \nxilofage) a avut ca urmare în timp:",
@@ -3268,7 +3268,7 @@
                 "sunt suportate de toate speciile, temperatura nefiind un factor de mediu limitativ;",
                 "sunt suportate doar de animalele homeoterme."
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Nevertebrate, reptilele și amfibienii din regiunea temperată își petrec sezonul rece (la scăderea \ntemperaturii și dispariția hranei):",
@@ -3328,7 +3328,7 @@
                 "limite diferite de toleranță la schimbarea temperaturii mediului pentru viața activă față de cele \npentru cea latentă (spori, ouă, chiști, etc.);",
                 "limite identice de toleranță la schimbarea temperaturii mediului pentru toate stadiile din ciclul \nlor de dezvoltare (ouă, juvenili, adulți, bătrâni)."
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Temperatura optimă ecologică:",
@@ -3338,7 +3338,7 @@
                 "este acea temperatura la care toate procesele metabolice ale unui individ se realizează cu \neficiență maximă (cu pierderi minime de energie);",
                 "este identică la toate speciile cu temperatura optimă fiziologică."
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Temperatura optimă fiziologică:",
@@ -3348,7 +3348,7 @@
                 "este temperatura la care întreaga populație își desfășoară activitatea optimă, cu pierderi minime \nde energie;",
                 "este acea temperatura la care toate procesele metabolice ale unui individ se realizează cu \neficiență maximă (cu pierderi minime de energie)."
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Astăzi este unanim acceptată teoria asupra conceptului de nișa ecologică elaborată de către:",
@@ -3428,7 +3428,7 @@
                 "trei dimensiuni (trei factori de mediu);",
                 "n-dimensiuni (hipervolum în n-dimensiuni, dimensiunile fiind atât factorii de mediu, cât și toate \nrelațiile speciei cu mediul respectiv și cu alte specii)."
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Nișa ecologică semnifică:",
@@ -3458,7 +3458,7 @@
                 "Specii adaptate la un moment dat să trăiască într-un anumit habitat, la schimbarea acestuia în \ntimpul succesiunii ecologice, vor dispărea brusc datorită noilor condiții de mediu, aceasta \nconducând la dispariția întregului ecosistem;",
                 "Odum a afirmat că succesiunea ecologică nu există în natură."
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Care din exemplele de mai jos nu este exemplu de succesiune ecologică:",
@@ -3488,7 +3488,7 @@
                 "atât plantele cât și animalele și microorganismele sunt responsabile, așa cum au afirmat după \nanul 1942 mai mulți cercetători;",
                 "nu are legătură nici o componentă a biodiversității, în nici o etapă a succesiunii."
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Exemple de ecosisteme care au atins stadiul de climax:",
@@ -3498,7 +3498,7 @@
                 "lacurile și bălțile din lunca inundabilă a Dunării;",
                 "codrii seculari de molid și fag din Carpații Păduroși, pădurile de stejar Letea și Caraorman din \nDelta Dunării, tundra arctică, pădurile tropicale virgine și recifii de corali."
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Exemplu de succesiune primară este:",
@@ -3548,7 +3548,7 @@
                 "se caracterizează la început prin dominanța heterotrofelor și începe într-un mediu predominant \norganic;",
                 "este cel mai des întâlnită în natură."
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Succesiunea primară:",
@@ -3768,7 +3768,7 @@
                 "Enzima ribulozo-difosfat carboxilaza / oxigenaza catalizează, în calitate de carboxilază, reacţia \nde legare a CO2 la RuDP, numai în cazul în care concentraţia CO2 este mai ridicată decât a O2.",
                 "În cazul în care concentraţia CO2 este scăzută şi cea de O2 este ridicată, aceeaşi enzimă \nacţionează ca oxigenază şi catalizează reacţia de formare a acidului fosfoglicolic, substanţă de bază \nîn fotorespiraţie."
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Selectați informația incorectă cu privire la plantele de tip CAM:",
@@ -3778,7 +3778,7 @@
                 "La acestea O2 este fixat pe PEP de PEP-carboxilaza cu formare de malat, care se acumulează în \nsucul vacuolar al celulelor din mezofil, al căror pH scade de la 6 la 4.",
                 "Malatul acumulat în sucul vacuolar este metabolizat în cursul perioadei de lumină, formându-\nse CO2 şi acid piruvic."
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "La reglarea secreției tiroidiene participă:",
@@ -3798,7 +3798,7 @@
                 "hipofiza secretă TRH, care va ajunge la hipotalamus determinând eliberarea de TSH, care va \nstimula secreția de hormoni tiroidieni",
                 "hipotalamusul nu îndeplinește nici un rol"
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Calcitonina este produsă:",
@@ -4108,7 +4108,7 @@
                 "nodulul sino-atrial, reţeaua subendocardiacă a lui His;",
                 "nici un răspuns nu este correct."
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Componentele țesutului excito-conductor nodal în inima de om sunt:",
@@ -4198,7 +4198,7 @@
                 "prin eliberarea unei molecule de apă de la acidul 2-fosfogliceric şi acţiunea enzimei enolaza, se \najunge la acid fosfoenolpiruvic.",
                 "de la acidul fosfoenolpiruvic, cu eliberare de energie şi acţiunea enzimei piruvatkinaza, se \najunge la acid piruvic."
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Selectați varianta incorectă cu privire la Ciclul Krebs:",
@@ -4208,7 +4208,7 @@
                 "După o decarboxilare ulterioară şi reducerea NAD+ se formează succinatul, într-o secvenţă de \nreacţii complicate în care este produsă, ca intermediar, succinil CoA.",
                 "Succinatul se oxidează pe calea FAD la fumarat în prezenţa succinat-dehidrogenazei."
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Selectați varianta incorectă cu privire la lanțul transportor de electroni:",
@@ -4228,7 +4228,7 @@
                 "Temperaturile ridicate pot determina o scădere a coeficientului respirator în ţesuturile ce respiră \nactiv.",
                 "Când în plante se degradează substanţe grase sau proteine, coeficientul respirator este subunitar \n(QR<1)."
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Selectați varianta incorectă cu privire la efectele temperaturii asupra procesului respirator la plante:",
@@ -4298,7 +4298,7 @@
                 "La plesnitoare (Ecbalium elaterium) expulzarea conţinutului fructului, cu seminţele dispersate \nîn ţesutul parenchimatic se face brusc, la o distanţă de 2 - 3 (10) m în momentul desprinderii \nfructului de pe peduncul, la nivelul unui ţesut de separaţie, zona de minimă rezistenţă a fructului.",
                 "La slăbănog (Impatiens noli-tangere) fructul este o drupă cărnoasă indehiscentă alcătuită din \ncinci carpele alungite, care se deschide la maturitate la nivelul ţesutului de separaţie dintre carpele. \nValvele eliberate se spiralizează brusc aruncând seminţele la distanţă de 1-2 m."
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Selectați varianta eronată cu privire la mișcările cloroplastelor:",
@@ -4318,7 +4318,7 @@
                 "În cazul unor răniri, la celulele din apropierea rănii nucleii se deplasează cât mai departe de \nrană, participând la elaborarea unor substanţe implicate în vindecare.",
                 "Se cunoaşte că nucleii se mişcă singuri."
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Selectați varianta corectă cu privire la tactisme:",
@@ -4338,7 +4338,7 @@
                 "Se datorează deplasării succesive a creşterii intensive prin alungire a celulelor de jur împrejurul \naxei centrale a organului respectiv.",
                 "Fenomenul se produce la multe plante, fiind imposibil de vizualizat la tulpinile plantelor \nvolubile."
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Selectați varianta eronată cu privire la fototropism:",
@@ -4358,7 +4358,7 @@
                 "În creşterea celor două feţe ale unui organ bilateral asimetric (frunze, solzi, învelişuri florale), \nmişcările pot fi epinastice, când creşterea organului este mai intensă pe faţa superioară, curbarea \navând loc spre faţa inferioară şi hiponastice, când curbarea are loc către faţa superioară, creşterea \nfiind mai intensă pe faţa inferioară.",
                 "După excitanţii care le produc, nastiile pot fi grupate în: seismonastii, fotonastii, termonastii, \nnictinastii, chemonastii etc."
             ],
-            "correct": null
+            "correct": 3
         },
         {
             "text": "Selectați varianta eronată cu privire la nictinastii:",
@@ -4468,7 +4468,7 @@
                 "Ionii de Ca2+ nu ajung în floem pentru că sunt mai puţin mobili.",
                 "În unele cazuri se constată fenomenul de eliminare a elementelor minerale din plantă, în mediul \nextern, numit eluție."
             ],
-            "correct": null
+            "correct": 3
         }
     ]
 }

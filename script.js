@@ -2,14 +2,17 @@ let questions = [];
 let selectedQuestions = [];
 let currentIndex = 0;
 let userAnswers = [];
-let quizStartTime = 0; // Pentru a stoca ora de începere a testului
-const TIME_LIMIT = 2 * 60 * 60; // 2 ore în secunde
-let timerInterval; // Pentru a stoca ID-ul intervalului pentru cronometru
+const TIME_LIMIT = 2 * 60 * 60; // 2 hours in seconds
+let timerInterval;
+let quizMode = 'test'; // 'test' or 'training'
+let feedbackGiven = false; // Used in training mode
 
-// --- Referințe elemente UI ---
+// --- UI Element References ---
 const landingPage = document.getElementById('landing-page');
 const quizContainer = document.getElementById('quiz-container');
-const startQuizButton = document.getElementById('startQuizButton');
+const summaryScreen = document.getElementById('summary-screen');
+const startTrainingButton = document.getElementById('startTrainingButton');
+const startTestButton = document.getElementById('startTestButton');
 const darkModeToggle = document.getElementById('darkModeToggle');
 const averageSuccessRateDisplay = document.getElementById('average-success-rate');
 const timerDiv = document.getElementById("timer");
@@ -17,56 +20,57 @@ const questionNumberDiv = document.getElementById("question-number");
 const questionTextDiv = document.getElementById("question-text");
 const optionsDiv = document.getElementById("options");
 const feedbackDiv = document.getElementById("feedback");
+const nextButton = document.getElementById('next-button');
+const homeButton = document.getElementById('homeButton');
+const backToHomeButton = document.getElementById('back-to-home');
 
-// --- Inițializare ---
+// --- Initialization ---
 document.addEventListener('DOMContentLoaded', () => {
-  // Verifică preferința modului întunecat în stocarea locală
   if (localStorage.getItem('darkMode') === 'enabled') {
     document.documentElement.classList.add('dark');
   }
-
-  // Listener de evenimente pentru butonul de comutare mod întunecat
   darkModeToggle.addEventListener('click', toggleDarkMode);
+  
+  startTrainingButton.addEventListener('click', () => {
+    quizMode = 'training';
+    startQuiz();
+  });
+  
+  startTestButton.addEventListener('click', () => {
+    quizMode = 'test';
+    startQuiz();
+  });
+  
+  homeButton.addEventListener('click', displayLandingPage);
 
-  // Listener de evenimente pentru butonul de pornire test
-  startQuizButton.addEventListener('click', startQuiz);
+  backToHomeButton.addEventListener('click', () => {
+    summaryScreen.classList.add('hidden');
+    displayLandingPage();
+  });
 
-  // Încarcă întrebările și afișează pagina de destinație
   loadQuestions().then(() => {
     displayLandingPage();
     calculateAndDisplaySuccessRate();
   });
 });
 
-// --- Funcționalitate mod întunecat ---
+// --- Dark Mode ---
 function toggleDarkMode() {
   document.documentElement.classList.toggle('dark');
-  if (document.documentElement.classList.contains('dark')) {
-    localStorage.setItem('darkMode', 'enabled');
-  } else {
-    localStorage.setItem('darkMode', 'disabled');
-  }
+  localStorage.setItem('darkMode', document.documentElement.classList.contains('dark') ? 'enabled' : 'disabled');
 }
 
-// --- Control flux test ---
+// --- Quiz Flow ---
 async function loadQuestions() {
   try {
     const response = await fetch("questions.json");
-    const data = await response.json();
-    questions = data.questions;
-
-    // Amestecă și alege 60 de întrebări
-    selectedQuestions = shuffle(questions).slice(0, 60);
-    userAnswers = Array(selectedQuestions.length).fill(null); // Inițializează răspunsurile utilizatorului pentru întrebările selectate
+    questions = (await response.json()).questions;
   } catch (error) {
-    console.error("Eroare la încărcarea întrebărilor:", error);
-    // Afișează un mesaj de eroare utilizatorului sau gestionează-l elegant
-    alert("Nu s-au putut încărca întrebările testului. Vă rugăm să încercați din nou mai târziu.");
+    console.error("Error loading questions:", error);
   }
 }
 
 function shuffle(arr) {
-  // Algoritmul de amestecare Fisher-Yates (Knuth)
   let currentIndex = arr.length, randomIndex;
   while (currentIndex !== 0) {
     randomIndex = Math.floor(Math.random() * currentIndex);
@@ -77,80 +81,74 @@ function shuffle(arr) {
 }
 
 function displayLandingPage() {
+  // Stop any active timers when returning to the landing page
+  clearInterval(timerInterval);
+  
   landingPage.classList.remove('hidden');
   quizContainer.classList.add('hidden');
+  summaryScreen.classList.add('hidden');
+  calculateAndDisplaySuccessRate();
 }
 
 function startQuiz() {
+  // Load questions based on the selected mode
+  if (quizMode === 'training') {
+    // For training mode, shuffle and use all available questions
+    selectedQuestions = shuffle(questions);
+  } else {
+    // For test mode, shuffle and use a random subset of 60 questions
+    selectedQuestions = shuffle(questions).slice(0, 60);
+  }
+
+  userAnswers = Array(selectedQuestions.length).fill(null);
+  currentIndex = 0;
+  feedbackGiven = false;
+  
   landingPage.classList.add('hidden');
   quizContainer.classList.remove('hidden');
-  currentIndex = 0; // Resetează indexul întrebării curente
-  userAnswers = Array(selectedQuestions.length).fill(null); // Resetează răspunsurile utilizatorului pentru un nou test
+
+  if (quizMode === 'test') {
+    timerDiv.classList.remove('hidden');
+    startTimer(TIME_LIMIT);
+  } else {
+    timerDiv.classList.add('hidden');
+  }
+  
   renderQuestion();
-  quizStartTime = Date.now(); // Înregistrează ora de începere a testului
-  startTimer(TIME_LIMIT);
 }
 
 function renderQuestion() {
+  feedbackGiven = false;
   const question = selectedQuestions[currentIndex];
-  questionNumberDiv.innerText = `Întrebarea ${currentIndex + 1} din ${selectedQuestions.length}`;
+  const isLastQuestion = currentIndex === selectedQuestions.length - 1;
+
+  nextButton.innerText = isLastQuestion ? 'Finish' : 'Next';
+  questionNumberDiv.innerText = `Question ${currentIndex + 1} of ${selectedQuestions.length}`;
   questionTextDiv.innerText = question.text;
-
-  // Adaugă clase pentru efectul de fade-in
-  questionTextDiv.classList.add('opacity-0', 'translate-y-2'); // Începe invizibil și ușor în jos
-  optionsDiv.classList.add('opacity-0', 'translate-y-2');
-
-  // Forțează reflow pentru a asigura rularea tranziției
-  void questionTextDiv.offsetWidth;
-  void optionsDiv.offsetWidth;
-
-  // Elimină clasele pentru a declanșa tranziția
-  questionTextDiv.classList.remove('opacity-0', 'translate-y-2');
-  optionsDiv.classList.remove('opacity-0', 'translate-y-2');
-
-  optionsDiv.innerHTML = ""; // Golește opțiunile anterioare
-
+  feedbackDiv.innerText = "";
+  
+  optionsDiv.innerHTML = "";
   question.options.forEach((option, idx) => {
     const btn = document.createElement("button");
-    btn.innerText = option;
-    btn.className = "w-full py-3 px-4 rounded-lg text-left text-lg font-medium shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-colors duration-200 ease-in-out " +
-                    "bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200";
-    btn.onclick = () => selectAnswer(idx);
-
-    // Aplică stiluri bazate pe răspunsul utilizatorului
-    if (userAnswers[currentIndex] !== null) {
-      btn.disabled = true; // Dezactivează butoanele odată ce un răspuns este selectat pentru întrebare
-
-      if (idx === question.correct) {
-        btn.classList.add('correct-answer'); // Verde pentru răspuns corect
-      } else if (idx === userAnswers[currentIndex]) {
-        btn.classList.add('incorrect-answer'); // Roșu pentru răspunsul incorect al utilizatorului
-      }
+    btn.innerHTML = option;
+    btn.className = "w-full py-3 px-4 rounded-lg text-left text-lg font-medium shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-all duration-200 ease-in-out bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200";
+    btn.onclick = () => selectAnswer(idx, btn);
+    
+    if (quizMode === 'test' && userAnswers[currentIndex] === idx) {
+        btn.classList.add('selected-answer');
     }
     optionsDiv.appendChild(btn);
   });
-
-  // Afișează feedback-ul
-  if (userAnswers[currentIndex] !== null) {
-    feedbackDiv.innerText =
-      userAnswers[currentIndex] === question.correct
-        ? "Corect!"
-        : `Greșit. Răspuns corect: ${question.options[question.correct]}`;
-    feedbackDiv.classList.remove('text-green-600', 'text-red-600');
-    feedbackDiv.classList.add(userAnswers[currentIndex] === question.correct ? 'text-green-600' : 'text-red-600');
-  } else {
-    feedbackDiv.innerText = "";
-    feedbackDiv.classList.remove('text-green-600', 'text-red-600');
-  }
 }
 
 function selectAnswer(choice) {
-  // Permite selectarea unui răspuns doar dacă nu a fost ales deja unul pentru întrebarea curentă
-  if (userAnswers[currentIndex] === null) {
-    userAnswers[currentIndex] = choice;
-    renderQuestion(); // Re-redă pentru a afișa feedback-ul și a dezactiva butoanele
-    saveQuizResult(); // Salvează rezultatul după fiecare răspuns
-  }
+  if (quizMode === 'training' && feedbackGiven) return;
+
+  userAnswers[currentIndex] = choice;
+  
+  const optionButtons = optionsDiv.querySelectorAll('button');
+  optionButtons.forEach(btn => btn.classList.remove('selected-answer'));
+  optionButtons[choice].classList.add('selected-answer');
 }
 
 function prevQuestion() {
@@ -161,126 +159,141 @@ function prevQuestion() {
 }
 
 function nextQuestion() {
+  // If in training mode and feedback has been shown, just move to the next question
+  if (quizMode === 'training' && feedbackGiven) {
+    if (currentIndex < selectedQuestions.length - 1) {
+      currentIndex++;
+      renderQuestion();
+    } else {
+      displayLandingPage(); // End of training, go home
+    }
+    return;
+  }
+
+  // Logic for Training Mode: show feedback now
+  if (quizMode === 'training') {
+    const question = selectedQuestions[currentIndex];
+    const choice = userAnswers[currentIndex];
+    
+    if (choice === null) {
+      alert("Please select an answer before proceeding.");
+      return;
+    }
+
+    const optionButtons = optionsDiv.querySelectorAll('button');
+    optionButtons.forEach(btn => btn.disabled = true);
+    
+    // Show correct answer
+    optionButtons[question.correct].classList.add('correct-answer');
+    
+    // Show incorrect answer if user was wrong
+    if (choice !== question.correct) {
+      optionButtons[choice].classList.remove('selected-answer');
+      optionButtons[choice].classList.add('incorrect-answer');
+      feedbackDiv.innerText = `Greșit. Răspuns corect: ${question.options[question.correct]}`;
+      feedbackDiv.className = 'mt-6 text-lg font-bold text-center text-red-600 dark:text-red-400';
+    } else {
+      feedbackDiv.innerText = "Corect!";
+      feedbackDiv.className = 'mt-6 text-lg font-bold text-center text-green-600 dark:text-green-400';
+    }
+    
+    feedbackGiven = true;
+    nextButton.innerText = (currentIndex === selectedQuestions.length - 1) ? 'Finish Training' : 'Continue';
+    return;
+  }
+
+  // Logic for Test Mode
   if (currentIndex < selectedQuestions.length - 1) {
     currentIndex++;
     renderQuestion();
   } else {
-    // Dacă este ultima întrebare și utilizatorul dă clic pe "Următorul", afișează rezultatele sau încheie testul
     endQuiz();
   }
 }
 
-// --- Funcționalitate cronometru ---
+// --- Timer ---
 function startTimer(seconds) {
-  clearInterval(timerInterval); // Golește orice cronometru existent
+  clearInterval(timerInterval);
   let remainingSeconds = seconds;
-
+  timerDiv.innerText = `Time left: 02:00:00`;
   timerInterval = setInterval(() => {
+    remainingSeconds--;
     let hrs = Math.floor(remainingSeconds / 3600);
     let mins = Math.floor((remainingSeconds % 3600) / 60);
     let secs = remainingSeconds % 60;
-
-    timerDiv.innerText = `Timp rămas: ${hrs}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-
+    timerDiv.innerText = `Time left: ${hrs.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
     if (remainingSeconds <= 0) {
-      clearInterval(timerInterval);
-      timerDiv.innerText = "Timpul a expirat!";
-      endQuiz("Timpul a expirat! Testul s-a încheiat.");
+      endQuiz();
     }
-    remainingSeconds--;
   }, 1000);
 }
 
-function endQuiz(message = "Test finalizat!") {
-  clearInterval(timerInterval); // Oprește cronometrul
-  // Opțional, afișează un rezumat sau navighează înapoi la pagina de destinație
-  alert(message + "\nScorul tău: " + calculateScore() + " din " + selectedQuestions.length);
-  displayLandingPage();
-  calculateAndDisplaySuccessRate(); // Actualizează rata de succes pe pagina de destinație
+function endQuiz() {
+  clearInterval(timerInterval);
+  if (quizMode === 'test') {
+    const { score, totalQuestions } = calculateScore();
+    saveQuizResult(score, totalQuestions);
+    showSummary(score, totalQuestions);
+  } else {
+    displayLandingPage();
+  }
 }
 
-// --- Calcul scor și rată de succes ---
+function showSummary(score, totalQuestions) {
+    quizContainer.classList.add('hidden');
+    summaryScreen.classList.remove('hidden');
+    const summaryScoreEl = document.getElementById('summary-score');
+    const summaryDetailsEl = document.getElementById('summary-details');
+
+    summaryScoreEl.innerText = `Your Score: ${score} out of ${totalQuestions} (${((score / totalQuestions) * 100).toFixed(2)}%)`;
+    summaryDetailsEl.innerHTML = '';
+
+    selectedQuestions.forEach((q, index) => {
+        const userAnswerIndex = userAnswers[index];
+        const isCorrect = userAnswerIndex === q.correct;
+        const container = document.createElement('div');
+        container.className = `p-4 rounded-lg ${isCorrect ? 'summary-correct' : 'summary-incorrect'}`;
+        container.innerHTML = `
+            <p class="font-bold">${index + 1}. ${q.text}</p>
+            <p class="mt-2">Your answer: <span class="font-semibold">${userAnswerIndex !== null ? q.options[userAnswerIndex] : 'No answer'}</span></p>
+            ${!isCorrect ? `<p>Correct answer: <span class="font-semibold">${q.options[q.correct]}</span></p>` : ''}
+        `;
+        summaryDetailsEl.appendChild(container);
+    });
+}
+
+// --- Scoring and Storage ---
 function calculateScore() {
   let score = 0;
   for (let i = 0; i < selectedQuestions.length; i++) {
-    if (userAnswers[i] !== null && userAnswers[i] === selectedQuestions[i].correct) {
+    if (userAnswers[i] === selectedQuestions[i].correct) {
       score++;
     }
   }
-  return score;
+  return { score: score, totalQuestions: selectedQuestions.length };
 }
 
-function saveQuizResult() {
-  const score = calculateScore();
-  const totalQuestions = selectedQuestions.length;
-  const isCompleted = userAnswers.every(answer => answer !== null); // Verifică dacă toate întrebările au fost răspuns
-
+function saveQuizResult(score, totalQuestions) {
   let quizResults = JSON.parse(localStorage.getItem('quizResults')) || [];
-
-  // Găsește dacă există un rezultat de test în desfășurare pentru sesiunea curentă
-  let currentQuizResultIndex = quizResults.findIndex(result => result.startTime === quizStartTime);
-
-  if (currentQuizResultIndex === -1) {
-    // Dacă nu există un test în desfășurare, adaugă unul nou
-    quizResults.push({
-      startTime: quizStartTime,
-      score: score,
-      totalQuestions: totalQuestions,
-      completed: isCompleted,
-      answers: userAnswers // Salvează răspunsurile curente pentru o posibilă revizuire
-    });
-  } else {
-    // Actualizează testul existent în desfășurare
-    quizResults[currentQuizResultIndex].score = score;
-    quizResults[currentQuizResultIndex].completed = isCompleted;
-    quizResults[currentQuizResultIndex].answers = userAnswers;
-  }
-
+  quizResults.push({
+    timestamp: new Date().toISOString(),
+    score: score,
+    totalQuestions: totalQuestions,
+  });
   localStorage.setItem('quizResults', JSON.stringify(quizResults));
 }
 
 function calculateAndDisplaySuccessRate() {
   let quizResults = JSON.parse(localStorage.getItem('quizResults')) || [];
-
   if (quizResults.length === 0) {
-    averageSuccessRateDisplay.innerText = "--%";
+    averageSuccessRateDisplay.innerText = "N/A";
     return;
   }
-
-  let totalCorrectAnswers = 0;
-  let totalAttemptedQuestions = 0;
-
-  quizResults.forEach(result => {
-    // Consideră doar testele finalizate pentru rata medie de succes
-    if (result.completed) {
-      totalCorrectAnswers += result.score;
-      totalAttemptedQuestions += result.totalQuestions;
-    }
+  let totalCorrect = 0;
+  let totalAttempted = 0;
+  quizResults.forEach(r => {
+    totalCorrect += r.score;
+    totalAttempted += r.totalQuestions;
   });
-
-  if (totalAttemptedQuestions > 0) {
-    const successRate = (totalCorrectAnswers / totalAttemptedQuestions) * 100;
-    averageSuccessRateDisplay.innerText = `${successRate.toFixed(2)}%`;
-  } else {
-    averageSuccessRateDisplay.innerText = "--%";
-  }
+  averageSuccessRateDisplay.innerText = totalAttempted > 0 ? `${((totalCorrect / totalAttempted) * 100).toFixed(2)}%` : "N/A";
 }
-
-// Suprascrie alert-ul implicit pentru a utiliza un modal personalizat pentru o experiență de utilizare mai bună
-window.alert = function(message) {
-  const modal = document.createElement('div');
-  modal.className = 'fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50';
-  modal.innerHTML = `
-    <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-xl text-center max-w-sm w-full">
-      <p class="text-xl font-semibold mb-6 text-gray-800 dark:text-gray-100">${message}</p>
-      <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-        OK
-      </button>
-    </div>
-  `;
-  document.body.appendChild(modal);
-
-  modal.querySelector('button').addEventListener('click', () => {
-    document.body.removeChild(modal);
-  });
-};
