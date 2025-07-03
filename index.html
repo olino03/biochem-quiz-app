@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Biochem Final</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -38,15 +37,32 @@
     .summary-incorrect { background-color: #fee2e2; }
     .dark .summary-incorrect { background-color: #991b1b; }
   </style>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'dark-primary': '#1e293b',
+            'dark-secondary': '#334155',
+            'dark-accent': '#475569',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100 min-h-screen flex flex-col items-center justify-center p-4">
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col items-center justify-center p-4 transition-colors duration-300">
 
-  <button id="darkModeToggle" class="absolute top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 shadow-md focus:outline-none">
-    <i class="fas fa-moon dark:hidden"></i>
-    <i class="fas fa-sun hidden dark:inline-block"></i>
+  <!-- Theme Toggle Button -->
+  <button id="darkModeToggle" class="absolute top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 shadow-md focus:outline-none transition-colors">
+    <i id="moon-icon" class="fas fa-moon"></i>
+    <i id="sun-icon" class="fas fa-sun hidden"></i>
   </button>
 
-  <div id="landing-page" class="w-full max-w-md bg-white dark:bg-gray-800 rounded-lg shadow-xl p-8 text-center transition-all duration-300 ease-in-out">
+  <!-- Landing Page -->
+  <div id="landing-page" class="w-full max-w-md bg-white dark:bg-dark-primary rounded-lg shadow-xl p-8 text-center transition-all duration-300 ease-in-out">
     <h1 class="text-4xl font-extrabold mb-2 text-gray-800 dark:text-gray-100">Quiz Biologie</h1>
     <p class="text-lg mb-6 text-gray-600 dark:text-gray-300">Alege modul</p>
     
@@ -59,42 +75,43 @@
         </button>
     </div>
 
-    <div id="success-rate-container" class="p-4 bg-gray-100 dark:bg-gray-700 rounded-md shadow-inner">
+    <div id="success-rate-container" class="p-4 bg-gray-100 dark:bg-dark-secondary rounded-md shadow-inner">
       <p class="text-md font-semibold text-gray-700 dark:text-gray-200">Rata ta medie de succes (Mod Test):</p>
       <p id="average-success-rate" class="text-3xl font-bold text-blue-600 dark:text-blue-400 mt-2">--%</p>
     </div>
   </div>
 
-  <div id="quiz-container" class="hidden w-full max-w-2xl bg-white dark:bg-gray-800 rounded-lg shadow-xl p-8 transition-all duration-300 ease-in-out">
+  <!-- Quiz Container -->
+  <div id="quiz-container" class="hidden w-full max-w-2xl bg-white dark:bg-dark-primary rounded-lg shadow-xl p-8 transition-all duration-300 ease-in-out">
     <div id="timer" class="text-center text-xl font-semibold mb-6 text-red-600 dark:text-red-400"></div>
     <div id="question-number" class="text-lg font-bold mb-4 text-gray-700 dark:text-gray-200"></div>
     <div id="question-text" class="text-2xl font-semibold mb-6 text-gray-900 dark:text-gray-100"></div>
     <div id="options" class="space-y-4"></div>
     <div id="feedback" class="mt-6 text-lg font-bold text-center"></div>
     <div class="navigation flex justify-between items-center mt-8">
-      <button onclick="prevQuestion()" class="bg-gray-300 hover:bg-gray-400 dark:bg-gray-600 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 font-bold py-2 px-6 rounded-full shadow-md">
+      <button onclick="prevQuestion()" id="prev-button" class="bg-gray-300 hover:bg-gray-400 dark:bg-dark-secondary dark:hover:bg-dark-accent text-gray-800 dark:text-gray-200 font-bold py-2 px-6 rounded-full shadow-md transition-colors">
         Înapoi
       </button>
-      <button id="homeButton" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-6 rounded-full shadow-md">
+      <button id="home-button" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-6 rounded-full shadow-md transition-colors">
         Acasă
       </button>
-      <button onclick="nextQuestion()" id="next-button" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full shadow-md">
+      <button onclick="nextQuestion()" id="next-button" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full shadow-md transition-colors">
         Înainte
       </button>
     </div>
   </div>
 
-  <div id="summary-screen" class="hidden w-full max-w-4xl bg-white dark:bg-gray-800 rounded-lg shadow-xl p-8 my-8">
+  <!-- Summary Screen -->
+  <div id="summary-screen" class="hidden w-full max-w-4xl bg-white dark:bg-dark-primary rounded-lg shadow-xl p-8 my-8">
     <h2 class="text-3xl font-bold text-center mb-4">Sumar Test</h2>
     <p id="summary-score" class="text-2xl text-center font-semibold mb-6"></p>
     <div id="summary-details" class="space-y-4 max-h-96 overflow-y-auto"></div>
     <div class="text-center mt-8">
-      <button id="back-to-home" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg">
+      <button id="back-to-home" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-colors">
         Înapoi la început
       </button>
     </div>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>

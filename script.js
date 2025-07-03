@@ -1,12 +1,3 @@
-let questions = [];
-let selectedQuestions = [];
-let currentIndex = 0;
-let userAnswers = [];
-const TIME_LIMIT = 2 * 60 * 60; // 2 hours in seconds
-let timerInterval;
-let quizMode = 'test'; // 'test' or 'training'
-let feedbackGiven = false; // Used in training mode
-
 // --- UI Element References ---
 const landingPage = document.getElementById('landing-page');
 const quizContainer = document.getElementById('quiz-container');
@@ -21,46 +12,76 @@ const questionTextDiv = document.getElementById("question-text");
 const optionsDiv = document.getElementById("options");
 const feedbackDiv = document.getElementById("feedback");
 const nextButton = document.getElementById('next-button');
-const homeButton = document.getElementById('homeButton');
+const prevButton = document.getElementById('prev-button');
+const homeButton = document.getElementById('home-button');
 const backToHomeButton = document.getElementById('back-to-home');
 
-// --- Initialization ---
-document.addEventListener('DOMContentLoaded', () => {
-  if (localStorage.getItem('darkMode') === 'enabled') {
-    document.documentElement.classList.add('dark');
+// --- THEME TOGGLE ELEMENTS ---
+const moonIcon = document.getElementById('moon-icon');
+const sunIcon = document.getElementById('sun-icon');
+const htmlElement = document.documentElement;
+
+// --- Global Quiz State ---
+let questions = [];
+let selectedQuestions = [];
+let currentIndex = 0;
+let userAnswers = [];
+const TIME_LIMIT = 1 * 60 * 60; // 2 hours in seconds
+let timerInterval;
+let quizMode = 'test'; // 'test' or 'training'
+let feedbackGiven = false; // Used in training mode
+
+// --- THEME MANAGEMENT ---
+function updateThemeVisuals() {
+  const isDarkMode = htmlElement.classList.contains('dark');
+  if (isDarkMode) {
+    moonIcon.classList.add('hidden');
+    sunIcon.classList.remove('hidden');
+  } else {
+    moonIcon.classList.remove('hidden');
+    sunIcon.classList.add('hidden');
   }
+}
+
+function toggleDarkMode() {
+  htmlElement.classList.toggle('dark');
+  localStorage.setItem('darkMode', htmlElement.classList.contains('dark') ? 'enabled' : 'disabled');
+  updateThemeVisuals();
+}
+
+// --- INITIALIZATION ---
+document.addEventListener('DOMContentLoaded', () => {
+  // Set initial theme based on localStorage
+  if (localStorage.getItem('darkMode') === 'enabled') {
+    htmlElement.classList.add('dark');
+  }
+  updateThemeVisuals();
+
+  // Attach event listeners
   darkModeToggle.addEventListener('click', toggleDarkMode);
-  
   startTrainingButton.addEventListener('click', () => {
     quizMode = 'training';
     startQuiz();
   });
-  
   startTestButton.addEventListener('click', () => {
     quizMode = 'test';
     startQuiz();
   });
-  
   homeButton.addEventListener('click', displayLandingPage);
-
   backToHomeButton.addEventListener('click', () => {
     summaryScreen.classList.add('hidden');
     displayLandingPage();
   });
+  prevButton.addEventListener('click', prevQuestion);
 
+  // Load quiz questions
   loadQuestions().then(() => {
     displayLandingPage();
     calculateAndDisplaySuccessRate();
   });
 });
 
-// --- Dark Mode ---
-function toggleDarkMode() {
-  document.documentElement.classList.toggle('dark');
-  localStorage.setItem('darkMode', document.documentElement.classList.contains('dark') ? 'enabled' : 'disabled');
-}
-
-// --- Quiz Flow ---
+// --- Quiz Flow Functions ---
 async function loadQuestions() {
   try {
     const response = await fetch("questions.json");
@@ -81,9 +102,7 @@ function shuffle(arr) {
 }
 
 function displayLandingPage() {
-  // Stop any active timers when returning to the landing page
   clearInterval(timerInterval);
-  
   landingPage.classList.remove('hidden');
   quizContainer.classList.add('hidden');
   summaryScreen.classList.add('hidden');
@@ -91,53 +110,59 @@ function displayLandingPage() {
 }
 
 function startQuiz() {
-  // Load questions based on the selected mode
+  if (questions.length === 0) {
+    alert("Failed to load questions. Please check the console for errors.");
+    return;
+  }
+
   if (quizMode === 'training') {
-    // For training mode, shuffle and use all available questions
     selectedQuestions = questions;
   } else {
-    // For test mode, shuffle and use a random subset of 60 questions
     selectedQuestions = shuffle(questions).slice(0, 60);
   }
 
   userAnswers = Array(selectedQuestions.length).fill(null);
   currentIndex = 0;
   feedbackGiven = false;
-  
   landingPage.classList.add('hidden');
   quizContainer.classList.remove('hidden');
 
   if (quizMode === 'test') {
     timerDiv.classList.remove('hidden');
-    homeButton.style.display = 'none'; // Hide home button in test mode
+    homeButton.style.display = 'none';
     startTimer(TIME_LIMIT);
   } else {
     timerDiv.classList.add('hidden');
-    homeButton.style.display = 'block'; // Ensure home button is visible in training mode
+    homeButton.style.display = 'block';
   }
-  
   renderQuestion();
 }
 
 function renderQuestion() {
+  if (currentIndex >= selectedQuestions.length) {
+    endQuiz();
+    return;
+  }
+
   feedbackGiven = false;
   const question = selectedQuestions[currentIndex];
   const isLastQuestion = currentIndex === selectedQuestions.length - 1;
 
   nextButton.innerText = isLastQuestion ? 'Finish' : 'Next';
-  questionNumberDiv.innerText = `Intrebarea ${currentIndex + 1} of ${selectedQuestions.length}`;
+  questionNumberDiv.innerText = `Întrebarea ${currentIndex + 1} din ${selectedQuestions.length}`;
   questionTextDiv.innerText = question.text;
   feedbackDiv.innerText = "";
-  
+  feedbackDiv.className = "mt-6 text-lg font-bold text-center";
+
   optionsDiv.innerHTML = "";
   question.options.forEach((option, idx) => {
     const btn = document.createElement("button");
     btn.innerHTML = option;
-    btn.className = "w-full py-3 px-4 rounded-lg text-left text-lg font-medium shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-all duration-200 ease-in-out bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200";
-    btn.onclick = () => selectAnswer(idx, btn);
-    
+    btn.className = "w-full py-3 px-4 rounded-lg text-left text-lg font-medium shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-all duration-200 ease-in-out bg-gray-200 hover:bg-gray-300 dark:bg-dark-secondary dark:hover:bg-dark-accent text-gray-800 dark:text-gray-200";
+    btn.onclick = () => selectAnswer(idx);
+
     if (quizMode === 'test' && userAnswers[currentIndex] === idx) {
-        btn.classList.add('selected-answer');
+      btn.classList.add('selected-answer');
     }
     optionsDiv.appendChild(btn);
   });
@@ -145,9 +170,7 @@ function renderQuestion() {
 
 function selectAnswer(choice) {
   if (quizMode === 'training' && feedbackGiven) return;
-
   userAnswers[currentIndex] = choice;
-  
   const optionButtons = optionsDiv.querySelectorAll('button');
   optionButtons.forEach(btn => btn.classList.remove('selected-answer'));
   optionButtons[choice].classList.add('selected-answer');
@@ -161,50 +184,40 @@ function prevQuestion() {
 }
 
 function nextQuestion() {
-  // If in training mode and feedback has been shown, just move to the next question
   if (quizMode === 'training' && feedbackGiven) {
     if (currentIndex < selectedQuestions.length - 1) {
       currentIndex++;
       renderQuestion();
     } else {
-      displayLandingPage(); // End of training, go home
+      displayLandingPage();
     }
     return;
   }
 
-  // Logic for Training Mode: show feedback now
   if (quizMode === 'training') {
     const question = selectedQuestions[currentIndex];
     const choice = userAnswers[currentIndex];
-    
     if (choice === null) {
-      alert("Please select an answer before proceeding.");
+      alert("Vă rugăm să selectați un răspuns înainte de a continua.");
       return;
     }
-
     const optionButtons = optionsDiv.querySelectorAll('button');
     optionButtons.forEach(btn => btn.disabled = true);
-    
-    // Show correct answer
     optionButtons[question.correct].classList.add('correct-answer');
-    
-    // Show incorrect answer if user was wrong
     if (choice !== question.correct) {
       optionButtons[choice].classList.remove('selected-answer');
       optionButtons[choice].classList.add('incorrect-answer');
       feedbackDiv.innerText = `Greșit. Răspuns corect: ${question.options[question.correct]}`;
-      feedbackDiv.className = 'mt-6 text-lg font-bold text-center text-red-600 dark:text-red-400';
+      feedbackDiv.classList.add('text-red-600', 'dark:text-red-400');
     } else {
       feedbackDiv.innerText = "Corect!";
-      feedbackDiv.className = 'mt-6 text-lg font-bold text-center text-green-600 dark:text-green-400';
+      feedbackDiv.classList.add('text-green-600', 'dark:text-green-400');
     }
-    
     feedbackGiven = true;
     nextButton.innerText = (currentIndex === selectedQuestions.length - 1) ? 'Finish Training' : 'Continue';
     return;
   }
 
-  // Logic for Test Mode
   if (currentIndex < selectedQuestions.length - 1) {
     currentIndex++;
     renderQuestion();
@@ -213,21 +226,26 @@ function nextQuestion() {
   }
 }
 
-// --- Timer ---
 function startTimer(seconds) {
   clearInterval(timerInterval);
   let remainingSeconds = seconds;
-  timerDiv.innerText = `Time left: 02:00:00`;
+  updateTimerDisplay(remainingSeconds);
+
   timerInterval = setInterval(() => {
     remainingSeconds--;
-    let hrs = Math.floor(remainingSeconds / 3600);
-    let mins = Math.floor((remainingSeconds % 3600) / 60);
-    let secs = remainingSeconds % 60;
-    timerDiv.innerText = `Time left: ${hrs.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    updateTimerDisplay(remainingSeconds);
+
     if (remainingSeconds <= 0) {
       endQuiz();
     }
   }, 1000);
+}
+
+function updateTimerDisplay(seconds) {
+  const hrs = Math.floor(seconds / 3600).toString().padStart(2, '0');
+  const mins = Math.floor((seconds % 3600) / 60).toString().padStart(2, '0');
+  const secs = (seconds % 60).toString().padStart(2, '0');
+  timerDiv.innerText = `Timp rămas: ${hrs}:${mins}:${secs}`;
 }
 
 function endQuiz() {
@@ -242,29 +260,28 @@ function endQuiz() {
 }
 
 function showSummary(score, totalQuestions) {
-    quizContainer.classList.add('hidden');
-    summaryScreen.classList.remove('hidden');
-    const summaryScoreEl = document.getElementById('summary-score');
-    const summaryDetailsEl = document.getElementById('summary-details');
+  quizContainer.classList.add('hidden');
+  summaryScreen.classList.remove('hidden');
+  const summaryScoreEl = document.getElementById('summary-score');
+  const summaryDetailsEl = document.getElementById('summary-details');
 
-    summaryScoreEl.innerText = `Your Score: ${score} out of ${totalQuestions} (${((score / totalQuestions) * 100).toFixed(2)}%)`;
-    summaryDetailsEl.innerHTML = '';
+  summaryScoreEl.innerText = `Scorul tău: ${score} din ${totalQuestions} (${((score / totalQuestions) * 100).toFixed(2)}%)`;
+  summaryDetailsEl.innerHTML = '';
 
-    selectedQuestions.forEach((q, index) => {
-        const userAnswerIndex = userAnswers[index];
-        const isCorrect = userAnswerIndex === q.correct;
-        const container = document.createElement('div');
-        container.className = `p-4 rounded-lg ${isCorrect ? 'summary-correct' : 'summary-incorrect'}`;
-        container.innerHTML = `
-            <p class="font-bold">${index + 1}. ${q.text}</p>
-            <p class="mt-2">Your answer: <span class="font-semibold">${userAnswerIndex !== null ? q.options[userAnswerIndex] : 'No answer'}</span></p>
-            ${!isCorrect ? `<p>Correct answer: <span class="font-semibold">${q.options[q.correct]}</span></p>` : ''}
+  selectedQuestions.forEach((q, index) => {
+    const userAnswerIndex = userAnswers[index];
+    const isCorrect = userAnswerIndex === q.correct;
+    const container = document.createElement('div');
+    container.className = `p-4 rounded-lg ${isCorrect ? 'bg-green-100 dark:bg-green-900' : 'bg-red-100 dark:bg-red-900'}`;
+    container.innerHTML = `
+          <p class="font-bold">${index + 1}. ${q.text}</p>
+          <p class="mt-2">Răspunsul tău: <span class="font-semibold">${userAnswerIndex !== null ? q.options[userAnswerIndex] : 'Niciun răspuns'}</span></p>
+          ${!isCorrect ? `<p>Răspuns corect: <span class="font-semibold">${q.options[q.correct]}</span></p>` : ''}
         `;
-        summaryDetailsEl.appendChild(container);
-    });
+    summaryDetailsEl.appendChild(container);
+  });
 }
 
-// --- Scoring and Storage ---
 function calculateScore() {
   let score = 0;
   for (let i = 0; i < selectedQuestions.length; i++) {
