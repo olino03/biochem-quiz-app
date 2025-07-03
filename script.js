@@ -94,7 +94,7 @@ function startQuiz() {
   // Load questions based on the selected mode
   if (quizMode === 'training') {
     // For training mode, shuffle and use all available questions
-    selectedQuestions = shuffle(questions);
+    selectedQuestions = questions;
   } else {
     // For test mode, shuffle and use a random subset of 60 questions
     selectedQuestions = shuffle(questions).slice(0, 60);

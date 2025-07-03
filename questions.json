@@ -298,7 +298,7 @@
                 "Absorbtia apei din sol  de catre plante;",
                 "Nici un raspuns nu este corect;"
             ],
-            "correct": 3
+            "correct": 0
         },
         {
             "text": "Care din urmatoarele afirmatii este adevarata?",
@@ -318,7 +318,7 @@
                 "Tensiunea superficiala determina coborarea apei in tuburile capilare;",
                 "Unitatea de măsură în sistemul internațional pentru coeficientul de tensiune superficială este \nKg/m."
             ],
-            "correct": 3
+            "correct": 0
         },
         {
             "text": "Care din urmatoarele afirmatii este adevarata?",
@@ -388,7 +388,7 @@
                 "forma sferica a picaturilor de apa;",
                 "toate raspunsurile sunt corecte;"
             ],
-            "correct": 2
+            "correct": 1
         },
         {
             "text": "Ca fenomen de transport, difuzia este determinată de:",
@@ -1048,7 +1048,7 @@
                 "Regenerarii",
                 "Celularitatii"
             ],
-            "correct": 3
+            "correct": 0
         },
         {
             "text": "Rolul fundamental al ţesutului epitelial este:",
@@ -1268,7 +1268,7 @@
                 "α(1→6)",
                 "β(1→6)"
             ],
-            "correct": 0
+            "correct": 1
         },
         {
             "text": "În aproape toţi acizii graşi nesaturaţi din natură, dublele legături se află în configuraţia geometrică:",
@@ -1328,7 +1328,7 @@
                 "diacilglicerol, în care una din grupările hidroxil primare ale glicerolului este esterificată cu acid \nfosforic",
                 "triacilglicerol, în care toate grupările hidroxil secundare sunt esterificate cu acidul fosforic"
             ],
-            "correct": 3
+            "correct": 2
         },
         {
             "text": "Care este sarcina netă a fosfatidilserinei la _p_H 7?",
@@ -1438,7 +1438,7 @@
                 "4",
                 "6"
             ],
-            "correct": 2
+            "correct": 1
         },
         {
             "text": "Care din următoarele ecuații stoechiometrice este valabilă pentru trecerea prin fermentație a \ngliceraldehidei la etanol și CO2?",
@@ -1488,7 +1488,7 @@
                 "izocitratul  se  oxidează foarte uşor în treapta următoare a ciclului, deplasând reacţia aconitazei \nspre formarea izocitra-tului",
                 "izocitratul, spre deosebire de citrat, este un compus macroergic"
             ],
-            "correct": 3
+            "correct": 2
         },
         {
             "text": "Majoritatea microorganismelor, a ţesuturilor animalelor superioare şi plantelor conţin 2 tipuri de \nizocitrat dehidrogenază. Ani de zile a existat o controversă privind care dintre ele este \nrăspunzătoare de oxidarea izocitratului la α-cetoglutarat în ciclul acizilor tricarboxilici. Un tip de \n_izoci__­trat dehidrogenază_ necesită NAD+ ca acceptor de electroni, iar celălalt necesită NADP+ \n. Reacţiile globale catalizate de cele două tipuri de izocitrat dehidrogenaze sunt identice: Izocitrat \n+ NAD+(NADP+) ↔ α-cetoglutarat + CO2 + NADH(NADPH) + H+. Ambele enzime apar în \nmitocondrii, dar enzima NADP-dependentă se găseşte şi în citosol. Izocitrat dehidrogenaza NAD-\ndependentă este puţin activă ca atare. Care enzimă participă la transformările din ciclul Krebs şi \nde ce?",
@@ -1618,7 +1618,7 @@
                 "3",
                 "4"
             ],
-            "correct": 0
+            "correct": 2
         },
         {
             "text": "Care este potenţialul standard redox al perechii oxigen-apă?",
@@ -2178,7 +2178,7 @@
                 "are rizine;",
                 "reprezintă o trisimbioză."
             ],
-            "correct": 1
+            "correct": 0
         },
         {
             "text": "Arhegonul și anteridia mușchilor sunt:",
@@ -2328,7 +2328,7 @@
                 "Lipsa glandelor tegumentare",
                 "Niciuna dintre variante"
             ],
-            "correct": 3
+            "correct": 0
         },
         {
             "text": "Urodelele (caudate) sunt animale cu:",
@@ -2348,7 +2348,7 @@
                 "Acvatică",
                 "Niciuna dintre variante"
             ],
-            "correct": 3
+            "correct": 0
         },
         {
             "text": "Sexele la reptile sunt:",
@@ -2438,7 +2438,7 @@
                 "Secreția de acid uric ajutând rinichii să elimine compușii nefolositori",
                 "Niciuna"
             ],
-            "correct": 3
+            "correct": 0
         },
         {
             "text": "Araucariaceele sunt răspândite în:",
@@ -2448,7 +2448,7 @@
                 "zona temperată a emisferei sudice;",
                 "zona tropicală a emisferei sudice."
             ],
-            "correct": 0
+            "correct": 3
         },
         {
             "text": "Arilul cărnos, ca și anexă a seminței, este prezent la:",
@@ -2768,7 +2768,7 @@
                 "Pelobates fuscus",
                 "Bombina bombina"
             ],
-            "correct": 3
+            "correct": 0
         },
         {
             "text": "Care dintre speciile de amfibieni au culoarea predominat verde?",
@@ -2778,7 +2778,7 @@
                 "Lacerta viridis",
                 "Toate"
             ],
-            "correct": 3
+            "correct": 1
         },
         {
             "text": "Care dintre speciile de mai jos face parte din ordinul Anura?",
@@ -2838,7 +2838,7 @@
                 "Natrix tessellata",
                 "Niciuna"
             ],
-            "correct": 3
+            "correct": 2
         },
         {
             "text": "Care dintre speciile listate face parte din ordinul Passeriformes?",
@@ -2858,7 +2858,7 @@
                 "Phalacrocorax carbo (Cormoran mare)",
                 "Corvus frugilegus (Cioară de semănătură)"
             ],
-            "correct": 3
+            "correct": 2
         },
         {
             "text": "Care dintre speciile de mai jos face parte din ordinul Passeriformes?",
@@ -3008,7 +3008,7 @@
                 "care au aceeași comportament social;",
                 "care au aceeași structură / organizare spațială."
             ],
-            "correct": 1
+            "correct": 0
         },
         {
             "text": "Distribuția grupată (contagioasă) a indivizilor în natură are următoarele avantaje:",
@@ -3088,7 +3088,7 @@
                 "între ultima reproducere și moarte;",
                 "între prima și ultima reproducere."
             ],
-            "correct": 3
+            "correct": 2
         },
         {
             "text": "Referitor la clasele de vârstă existente la plante, plantele generative sunt:",
@@ -3198,7 +3198,7 @@
                 "legea lui Allen;",
                 "principiul lui Allee referitor la densitatea optimă a speciei pradă și a speciei de prădător."
             ],
-            "correct": 3
+            "correct": 0
         },
         {
             "text": "Prădătorismul este:",
@@ -3318,7 +3318,7 @@
                 "trăiesc numai în pădurile din zona temperată;",
                 "suporta variații mici de temperatură a mediului;"
             ],
-            "correct": 0
+            "correct": 3
         },
         {
             "text": "Speciile prezintă:",
@@ -3328,7 +3328,7 @@
                 "limite diferite de toleranță la schimbarea temperaturii mediului pentru viața activă față de cele \npentru cea latentă (spori, ouă, chiști, etc.);",
                 "limite identice de toleranță la schimbarea temperaturii mediului pentru toate stadiile din ciclul \nlor de dezvoltare (ouă, juvenili, adulți, bătrâni)."
             ],
-            "correct": 3
+            "correct": 2
         },
         {
             "text": "Temperatura optimă ecologică:",
@@ -3458,7 +3458,7 @@
                 "Specii adaptate la un moment dat să trăiască într-un anumit habitat, la schimbarea acestuia în \ntimpul succesiunii ecologice, vor dispărea brusc datorită noilor condiții de mediu, aceasta \nconducând la dispariția întregului ecosistem;",
                 "Odum a afirmat că succesiunea ecologică nu există în natură."
             ],
-            "correct": 3
+            "correct": 0
         },
         {
             "text": "Care din exemplele de mai jos nu este exemplu de succesiune ecologică:",
@@ -3488,7 +3488,7 @@
                 "atât plantele cât și animalele și microorganismele sunt responsabile, așa cum au afirmat după \nanul 1942 mai mulți cercetători;",
                 "nu are legătură nici o componentă a biodiversității, în nici o etapă a succesiunii."
             ],
-            "correct": 3
+            "correct": 2
         },
         {
             "text": "Exemple de ecosisteme care au atins stadiul de climax:",
@@ -3528,7 +3528,7 @@
                 "unul din stadiile intermediare ale unui proces de succesiune ecologică;",
                 "prima verigă dintr-un lanț trofic."
             ],
-            "correct": 0
+            "correct": 1
         },
         {
             "text": "Succesiunea autotrofă:",
@@ -3578,7 +3578,7 @@
                 "este stadiul final al unei succesiuni ecologice;",
                 "este stadiul inițial al unei succesiuni ecologice."
             ],
-            "correct": 2
+            "correct": 1
         },
         {
             "text": "Bivalentii se formeaza in:",
@@ -3898,7 +3898,7 @@
                 "carbaminohemoglobină la cuplarea hemoglobinei cu CO2;",
                 "methemoglobină la cuplarea hemogobinei cu O2."
             ],
-            "correct": 1
+            "correct": 2
         },
         {
             "text": "Funcția de coordonare umorală a sângelui constă în:",
@@ -3938,7 +3938,7 @@
                 "transportul produșilor de metabolism spre rinichi;",
                 "oprirea hemoragiilor rezultate prin lezarea vaselor mici și mijlocii."
             ],
-            "correct": 1
+            "correct": 3
         },
         {
             "text": "Funcția respiratorie a sângelui constă în:",
@@ -3948,7 +3948,7 @@
                 "transportul produșilor de metabolism spre rinichi;",
                 "oprirea hemoragiilor rezultate prin lezarea vaselor mici și mijlocii."
             ],
-            "correct": 1
+            "correct": 0
         },
         {
             "text": "Hemoglobina este formată din 2 componente:",
@@ -4098,7 +4098,7 @@
                 "nodulul sino-atrial, nodulul atrio-ventricular, fasciculul His, reţeaua subendocardiacă a lui \nPurkinje;",
                 "nici un răspuns nu este corect."
             ],
-            "correct": 3
+            "correct": 2
         },
         {
             "text": "Componentele țesutului excito-conductor nodal în inima de om sunt:",
@@ -4198,7 +4198,7 @@
                 "prin eliberarea unei molecule de apă de la acidul 2-fosfogliceric şi acţiunea enzimei enolaza, se \najunge la acid fosfoenolpiruvic.",
                 "de la acidul fosfoenolpiruvic, cu eliberare de energie şi acţiunea enzimei piruvatkinaza, se \najunge la acid piruvic."
             ],
-            "correct": 3
+            "correct": 0
         },
         {
             "text": "Selectați varianta incorectă cu privire la Ciclul Krebs:",
@@ -4278,7 +4278,7 @@
                 "Energia stocată în ATP este folosită de către celulă în diverse procese metabolice, în funcție de \nnecesitate;",
                 "50% din energia eliberată în lanțul respirator se pierde."
             ],
-            "correct": 0
+            "correct": 3
         },
         {
             "text": "Selectați variantă eronată cu privire la mișcările de xerochazie:",
@@ -4318,7 +4318,7 @@
                 "În cazul unor răniri, la celulele din apropierea rănii nucleii se deplasează cât mai departe de \nrană, participând la elaborarea unor substanţe implicate în vindecare.",
                 "Se cunoaşte că nucleii se mişcă singuri."
             ],
-            "correct": 3
+            "correct": 1
         },
         {
             "text": "Selectați varianta corectă cu privire la tactisme:",
@@ -4358,7 +4358,7 @@
                 "În creşterea celor două feţe ale unui organ bilateral asimetric (frunze, solzi, învelişuri florale), \nmişcările pot fi epinastice, când creşterea organului este mai intensă pe faţa superioară, curbarea \navând loc spre faţa inferioară şi hiponastice, când curbarea are loc către faţa superioară, creşterea \nfiind mai intensă pe faţa inferioară.",
                 "După excitanţii care le produc, nastiile pot fi grupate în: seismonastii, fotonastii, termonastii, \nnictinastii, chemonastii etc."
             ],
-            "correct": 3
+            "correct": 2
         },
         {
             "text": "Selectați varianta eronată cu privire la nictinastii:",
