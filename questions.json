@@ -1478,7 +1478,7 @@
                 "_piruvatkinaza_",
                 "_  gliceraldehid-3-fosfat dehidrogenaza_"
             ],
-            "correct": 0
+            "correct": 3
         },
         {
             "text": "În care din următoarele reacții catalizate enzimatic se formează un compus macroergic?",
@@ -1628,7 +1628,7 @@
                 "NADH → FMNH2 → FP1(Fe·S) → QH2 → (2Fe·S) → cit a-cit a3 → cit b → O2",
                 "NADH → FMNH2 → FP1(Fe·S) → (2Fe·S) → cit. b (Fe·S)cit.c1 → QH2 → cit a-cit a3 → \nO2"
             ],
-            "correct": 3
+            "correct": 0
         },
         {
             "text": "Câte locuri (situsuri) de formare a ATP există de‑a lungul lanţului transportor de electroni?",
@@ -3788,7 +3788,7 @@
                 "Enzima ribulozo-difosfat carboxilaza / oxigenaza catalizează, în calitate de carboxilază, reacţia \nde legare a CO2 la RuDP, numai în cazul în care concentraţia CO2 este mai ridicată decât a O2.",
                 "În cazul în care concentraţia CO2 este scăzută şi cea de O2 este ridicată, aceeaşi enzimă \nacţionează ca oxigenază şi catalizează reacţia de formare a acidului fosfoglicolic, substanţă de bază \nîn fotorespiraţie."
             ],
-            "correct": 3
+            "correct": 0
         },
         {
             "text": "Selectați informația incorectă cu privire la plantele de tip CAM:",

@@ -123,7 +123,7 @@ function startQuiz() {
   if (quizMode === 'training') {
     selectedQuestions = questions;
   } else {
-    selectedQuestions = shuffle(questions).slice(0, 3);
+    selectedQuestions = shuffle(questions).slice(0, 60);
   }
 
   userAnswers = Array(selectedQuestions.length).fill(null);
