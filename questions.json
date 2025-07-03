@@ -228,7 +228,7 @@
                 "Pentru soluţiile aceluiaşi solvit şi de aceeaşi concentraţie este direct proporţională cu \ntemperatura;",
                 "Presiunea osmotica a unei soluţii diluate şi neelectrolitice depinde de natura solventului;"
             ],
-            "correct": 0
+            "correct": 2
         },
         {
             "text": "Soluţiile care au presiunile osmotice egale se numesc:",
@@ -308,7 +308,7 @@
                 "Forțele superficiale au tendinţa de a mari suprafaţa lichidului şi sunt cu atât mai mari cu cât \nlungimea pe care se exercită este mai mare.",
                 "Între moleculele stratului superficial se exercită forţe tangentiale la suprafața  numite forţe de \nfrecare."
             ],
-            "correct": 3
+            "correct": 1
         },
         {
             "text": "Care din urmatoarele afirmatii este adevarata?",
@@ -329,6 +329,16 @@
                 "nici o afirmatie nu este adevarata;"
             ],
             "correct": 1
+        },
+        {
+            "text": "Substanţele care introduse într-un lichid modifică tensiunea superficială a acestuia se numesc:",
+            "options": [
+                "izotonice;",
+                "hipertonice;",
+                "hipotonice;",
+                "tensioactive;"
+            ],
+            "correct": 3 
         },
         {
             "text": "Lichidele care udă pereţii vasului:",
@@ -401,6 +411,16 @@
             "correct": 0
         },
         {
+            "text": "Care din urmatoarele afirmatii este adevarata?",
+            "options": [
+                "Difuzia este fenomenul de transport care apare în sistemele în care există neomogenităţi de concentratie;",
+                "Difuzia  constă în transportul ordonat de substanta dinspre zonele cu concentratie mica spre cele cu concentratie mare;",
+                "Difuzia este fenomenul de transport care apare în sistemele în care există neomogenităţi de viteza;",
+                "Difuzia  constă în transportul ordonat de impuls dinspre zonele cu concentratie mare spre cele cu concentratie mica;"
+            ],
+            "correct": 0
+        },
+        {
             "text": "Densitatea fluxului de masă  este:",
             "options": [
                 "cantitatea de substanta transportată în unitatea de timp;",
@@ -408,7 +428,7 @@
                 "cantitatea de substanta transportată pe unitatea de arie aşezată perpendicular pe direcţia de \ntransport;",
                 "este o marime scalara;"
             ],
-            "correct": 3
+            "correct": 1
         },
         {
             "text": "In cazul difuziei, transportul de substanţă:",
@@ -478,7 +498,7 @@
                 "dependenta dintre densitatea fluxului de masa si gradientul de viteza;",
                 "nici un raspuns nu este corect;"
             ],
-            "correct": 1
+            "correct": 0
         },
         {
             "text": "Alegeți afirmația greșită cu referire la ţesuturile false",
@@ -568,7 +588,7 @@
                 "celulele parenchimatice intră în alcătuirea țesuturile de apărare, asimilatoare, aerifere, \nabsorbante, de depozitare, sensitive etc",
                 "celulele prozenchimatice sunt lungi, de regulă înguste şi cu pereţii îngroşaţi și caracterizează \nîndeosebi ţesuturile conducătore şi mecanice"
             ],
-            "correct": 3
+            "correct": 1
         },
         {
             "text": "Selectați afirmația incorectă referitoare la ţesuturile vegetale",
@@ -578,7 +598,7 @@
                 "ţesuturile glandulare se clasifică în senzitive (aparatul statolitic, organe senzoriale și formaţiuni \n”optice”) și de separație",
                 "meristemele secundare sunt cambiul și felogenul"
             ],
-            "correct": 3
+            "correct": 2
         },
         {
             "text": "Alegeți afirmația greșită referitoare la IgG",
@@ -678,7 +698,7 @@
                 "sunt glicoproteine",
                 "se cunosc Ig membranare (BCR) şi Ig solubile (secretate)"
             ],
-            "correct": 3
+            "correct": 0
         },
         {
             "text": "Precizați care afirmație referitoare la distribuţia tisulara a moleculelor MHC I şi II este incorectă",
@@ -728,7 +748,7 @@
                 "cand celula somatică respectivă cooperează cu limfocitelor citotoxice sau limfocitele \nsupresoare, aceste limfocite recunosc mai intai lanţul β.",
                 "au funcţii in cooperarea celulară, prezentarea Ag şi rejetul grefelor"
             ],
-            "correct": 3
+            "correct": 2
         },
         {
             "text": "Selectați afirmația greșită referitoare la funcțiile moleculelor MHC II",
