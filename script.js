@@ -70,6 +70,11 @@ document.addEventListener('DOMContentLoaded', () => {
   homeButton.addEventListener('click', displayLandingPage);
   backToHomeButton.addEventListener('click', () => {
     summaryScreen.classList.add('hidden');
+    const passFailCard = document.getElementById('pass-fail-card');
+    if (passFailCard) {
+      passFailCard.classList.add('hidden');
+      passFailCard.innerText = '';
+    }
     displayLandingPage();
   });
   prevButton.addEventListener('click', prevQuestion);
@@ -118,7 +123,7 @@ function startQuiz() {
   if (quizMode === 'training') {
     selectedQuestions = questions;
   } else {
-    selectedQuestions = shuffle(questions).slice(0, 60);
+    selectedQuestions = shuffle(questions).slice(0, 3);
   }
 
   userAnswers = Array(selectedQuestions.length).fill(null);
@@ -262,10 +267,24 @@ function endQuiz() {
 function showSummary(score, totalQuestions) {
   quizContainer.classList.add('hidden');
   summaryScreen.classList.remove('hidden');
+
   const summaryScoreEl = document.getElementById('summary-score');
   const summaryDetailsEl = document.getElementById('summary-details');
+  const passFailCard = document.getElementById('pass-fail-card');
 
-  summaryScoreEl.innerText = `Scorul tău: ${score} din ${totalQuestions} (${((score / totalQuestions) * 100).toFixed(2)}%)`;
+  const percentage = (score / totalQuestions) * 100;
+  const roundedPercentage = percentage.toFixed(2);
+
+  summaryScoreEl.innerText = `Scorul tău: ${score} din ${totalQuestions} (${roundedPercentage}%)`;
+
+  // Configure Pass/Fail Card
+  passFailCard.classList.remove('hidden');
+  passFailCard.innerText = percentage >= 60 ? `You passed (${roundedPercentage}%)` : `You failed (${roundedPercentage}%)`;
+  passFailCard.className = `text-center text-xl font-bold rounded-lg p-4 my-4 ${percentage >= 60
+      ? 'bg-green-200 text-green-800 dark:bg-green-900 dark:text-green-200'
+      : 'bg-red-200 text-red-800 dark:bg-red-900 dark:text-red-200'
+    }`;
+
   summaryDetailsEl.innerHTML = '';
 
   selectedQuestions.forEach((q, index) => {
@@ -274,10 +293,10 @@ function showSummary(score, totalQuestions) {
     const container = document.createElement('div');
     container.className = `p-4 rounded-lg ${isCorrect ? 'bg-green-100 dark:bg-green-900' : 'bg-red-100 dark:bg-red-900'}`;
     container.innerHTML = `
-          <p class="font-bold">${index + 1}. ${q.text}</p>
-          <p class="mt-2">Răspunsul tău: <span class="font-semibold">${userAnswerIndex !== null ? q.options[userAnswerIndex] : 'Niciun răspuns'}</span></p>
-          ${!isCorrect ? `<p>Răspuns corect: <span class="font-semibold">${q.options[q.correct]}</span></p>` : ''}
-        `;
+      <p class="font-bold">${index + 1}. ${q.text}</p>
+      <p class="mt-2">Răspunsul tău: <span class="font-semibold">${userAnswerIndex !== null ? q.options[userAnswerIndex] : 'Niciun răspuns'}</span></p>
+      ${!isCorrect ? `<p>Răspuns corect: <span class="font-semibold">${q.options[q.correct]}</span></p>` : ''}
+    `;
     summaryDetailsEl.appendChild(container);
   });
 }
