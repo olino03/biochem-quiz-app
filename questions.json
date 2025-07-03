@@ -768,7 +768,7 @@
                 "domeniile α2 şi β2 sunt identice pentru toate celulele din organism, şi reprezintă domeniile \nmonomorfe ale MHC II",
                 "se găsesc numai pe membranele celulelor cu rol de APC (celule dendritice, macrofage, \nlimfocite)"
             ],
-            "correct": 3
+            "correct": 1
         },
         {
             "text": "Selectați afirmația greșită referitoare la semnificaţia evolutiva a moleculelor MHC I şi II",
@@ -788,7 +788,7 @@
                 "domeniul α 3 (constant sau monomorf) nu are rol structural și nu este identic pentru toate \ncelulele din organism",
                 "lanţul β (β 2-microglobulina) este constant pentru toţi indivizii unei specii, are o greutate \nmoleculară mică şi este legat de domeniul α 3."
             ],
-            "correct": 3
+            "correct": 2
         },
         {
             "text": "Selectati afirmatia incorecta referitoare la moleculele prezentatoare ale epitopilor:",
@@ -978,7 +978,7 @@
                 "Ambele",
                 "Niciuna"
             ],
-            "correct": 2
+            "correct": 3
         },
         {
             "text": "Reactia acrozomiala se declanseaza la legarea spermiei de:",
@@ -1048,7 +1048,7 @@
                 "Epiteliul intestinal",
                 "Niciuna"
             ],
-            "correct": 3
+            "correct": 0
         },
         {
             "text": "Intre caracterele generale ale tesuturilor epiteliale intra:",
@@ -1058,7 +1058,7 @@
                 "Avascularitatea si cantitatea mare de fibre celulare",
                 "Toate"
             ],
-            "correct": 3
+            "correct": 0
         },
         {
             "text": "Prezenta uni pol apical si al unuia bazal al celulei epiteliale reprezinta o trasatura specifica:",
@@ -1118,7 +1118,7 @@
                 "Lys",
                 "Gly"
             ],
-            "correct": 3
+            "correct": 0
         },
         {
             "text": "Care din următorii aminoacizi este încărcat pozitiv la _p_H 6 ?",
@@ -1128,7 +1128,7 @@
                 "Val",
                 "Gly"
             ],
-            "correct": 3
+            "correct": 0
         },
         {
             "text": "Care din următorii aminoacizi nu prezintă încărcare netă la _p_H neutru ?",
@@ -1178,7 +1178,7 @@
                 "Lys",
                 "Glu"
             ],
-            "correct": 2
+            "correct": 0
         },
         {
             "text": "Care este _p_H-ul soluţiilor: 0,1M acid acetic ‑ 0,03 M acetat de sodiu; 0,1M Gly ‑ 0,05M NaOH \nşi respectiv 0,1M Gly - HCl 0,05M ? (se dau: pentru acid acetic _p_K' = 4,8; pentru glicocol \n_p_K'1 = 2,4 şi _p_K'2 = 9,8; se mai dă: lg(0,3) = ‑0,52; ln(0,3) = ‑1,2; lg(3,33) = 0,52; ln(3,33) = \n1,2; lg(0,5) = ‑0,3; ln(0,5) = ‑0,7; lg(2) = 0,3; ln(2) = 0,7",
@@ -1218,7 +1218,7 @@
                 "configuraţiei atomului de carbon asimetric care cuprinde atomul de carbon carbonilic",
                 "faptului că molecula roteşte planul luminii polarizate spre dreapta sau spre stânga"
             ],
-            "correct": 3
+            "correct": 0
         },
         {
             "text": "Monozaharidele sunt stabile la fierbere cu:",
@@ -1228,7 +1228,7 @@
                 "baze diluate",
                 "baze concentrate"
             ],
-            "correct": 2
+            "correct": 0
         },
         {
             "text": "Care din următoarele afirmaţii referitoare la derivaţii O-acilaţi este falsă:",
@@ -1278,7 +1278,7 @@
                 "α(1→6)",
                 "β(1→6)"
             ],
-            "correct": 0
+            "correct": 1
         },
         {
             "text": "Celuloza poate fi hidrolizată de enzimele ce atacă legăturile glicozidice",
@@ -1318,7 +1318,7 @@
                 "12",
                 "24"
             ],
-            "correct": 0
+            "correct": 1
         },
         {
             "text": "Câţi izomeri posibili ai monoacilglicerolului care conţin acid palmitic există?",
@@ -1328,7 +1328,7 @@
                 "5",
                 "6"
             ],
-            "correct": 3
+            "correct": 1
         },
         {
             "text": "Care din următorii triacilgliceroli are punctul de topire cel mai ridicat:",
@@ -1368,7 +1368,7 @@
                 "0",
                 "2-"
             ],
-            "correct": 1
+            "correct": 3
         },
         {
             "text": "Considerând un fosfoglicerid, fosfolipaza A2 îndepărtează specific:",
@@ -1418,7 +1418,7 @@
                 "gruparea  metil",
                 "datorită faptului că fructozo-1,6-bisfosfatul se scindează în 2 molecule cu 3 atomi de carbon, \ncare apoi merg împreună, prin izomerizare, în secvența glicolitică, carbonul marcat apare atât la \ngruparea carboxil, cât și la gruparea metil ale piruvatului"
             ],
-            "correct": 0
+            "correct": 3
         },
         {
             "text": "_Gliceraldehid-3-fosfat dehidrogenaza_ poate folosi arsenat în loc de fosfat ca substrat. Produsul \nrezultat este 1-arseno-3-fosfoglicerat, un compus foarte instabil care se hidrolizează rapid la \narsenat și 3-fosfoglicerat. Pornind de la 1 moleculă de glucoză, câte molecule de ATP se obțin în \nglicoliză, dacă în loc de fosfat se folosește ca substrat arsenatul?",
@@ -1428,7 +1428,7 @@
                 "2",
                 "3"
             ],
-            "correct": 1
+            "correct": 0
         },
         {
             "text": "Pentru trecerea glicerolului la acid lactic, care din următoarele ecuații stoechiometrice este \nvalabilă?",
@@ -1448,7 +1448,7 @@
                 "5",
                 "6"
             ],
-            "correct": 3
+            "correct": 1
         },
         {
             "text": "Câte molecule de ATP se obțin prin trecerea prin fermentația gliceraldehidei până la etanol și CO2?",
@@ -1468,7 +1468,7 @@
                 "gliceraldehidă + 2 ADP + 2 Pa → etanol + 2 CO2 + 2 ATP + 2 H2O",
                 "gliceraldehidă + ADP + Pa → 2 etanol + 2 CO2 + ATP + 2 H2O"
             ],
-            "correct": 0
+            "correct": 1
         },
         {
             "text": "În glicoliză, 2 moli de fosfat anorganic (Pa) sunt folosiți per mol de glucoză consumată. Care din \nurmătoarele enzime catalizează utilizarea Pa?",
@@ -1518,7 +1518,7 @@
                 "Izocitrat dehidrogenaza NADP‑dependentă, deoarece este o enzimă allosterică, care este \nactivată de ATP",
                 "Izocitrat dehidrogenaza NAD‑dependentă, deoarece deşi ca atare enzima este puţin activă ΔGo' \n= -5,0 kcal·mol-1 şi reacţia este împinsă spre dreapta"
             ],
-            "correct": 3
+            "correct": 1
         },
         {
             "text": "_Complexul α-cetoglutarat dehidrogenazei_ catalizează reacţia: α-cetoglutarat + NAD+ + CoA ↔ \nsuccinil-CoA + CO2 + NADH + H+. Reacţia este analogă oxidării piruvatului la acetil-CoA şi \nCO2. Care din următoarele coenzime nu participă la reacţia catalizată de _complexul α-\ncetoglutarat dehidrogenazei_?",
@@ -1538,7 +1538,7 @@
                 "3",
                 "4"
             ],
-            "correct": 0
+            "correct": 1
         },
         {
             "text": "Câte rotaţii ale ciclului Krebs sunt implicate pentru a răspunde de oxidarea netă la CO2 şi H2O a \ngliceraldehidei?",
@@ -1718,7 +1718,7 @@
                 "la virusurile cu capsidă icozaedrică capsomerele sunt oligomere;",
                 "toate răspunsurile sunt corecte."
             ],
-            "correct": 0
+            "correct": 3
         },
         {
             "text": "Genomul viral:",
@@ -1828,7 +1828,7 @@
                 "nu contribuie la procesul de creştere;",
                 "nici un răspuns nu este corect."
             ],
-            "correct": 3
+            "correct": 0
         },
         {
             "text": "Funcțiile peretelui celular bacterian sunt:",
@@ -1838,7 +1838,7 @@
                 "asigură formarea septului de diviziune ce separă cele două celule surori, la bacteriile Gram +;",
                 "nici un răspuns nu este corect."
             ],
-            "correct": 3
+            "correct": 2
         },
         {
             "text": "Membrana celulară:",
@@ -1858,7 +1858,7 @@
                 "lipidică și proteică;",
                 "nici un răspuns nu este corect."
             ],
-            "correct": 3
+            "correct": 0
         },
         {
             "text": "Mureina este formată din:",
@@ -2418,7 +2418,7 @@
                 "O teacă epidermică pieloasă",
                 "Niciuna dintre variante"
             ],
-            "correct": 3
+            "correct": 0
         },
         {
             "text": "Remigele sunt pene:",
@@ -2508,7 +2508,7 @@
                 "absența sau prezența glandelor rezinifere;",
                 "distribuția și gruparea florilor."
             ],
-            "correct": 0
+            "correct": 1
         },
         {
             "text": "Gimnosperme lipsite de canale rezinifere sunt cele din familia:",
@@ -2538,7 +2538,7 @@
                 "4 integumente;",
                 "1 integument."
             ],
-            "correct": 0
+            "correct": 3
         },
         {
             "text": "Punctuațiunile areolate de tip abietoid sunt dispuse:",
@@ -2548,7 +2548,7 @@
                 "pe 3 rânduri;",
                 "pe 1 rând."
             ],
-            "correct": 0
+            "correct": 3
         },
         {
             "text": "Specia Sequoiadendron giganteum aparține familiei:",
@@ -2558,7 +2558,7 @@
                 "Pinaceae;",
                 "Taxodiaceae."
             ],
-            "correct": 2
+            "correct": 3
         },
         {
             "text": "Dintre fructele rosaceelor enumerate mai jos, la formarea căruia participă și receptaculul:",
@@ -2568,7 +2568,7 @@
                 "foliculă;",
                 "nuculă."
             ],
-            "correct": 0
+            "correct": 1
         },
         {
             "text": "Florile speciilor încadrate familie Rosaceae au:",
@@ -2578,7 +2578,7 @@
                 "perigon cu 6 tepale, androceu cu 6 stamine și gineceu cu 3 carpele unite;",
                 "caliciu cu 5 sepale, corola cu 5 petale, androceu cu 4 stamine și gineceu cu 2 carpele unite;"
             ],
-            "correct": 3
+            "correct": 0
         },
         {
             "text": "Fructele întâlnite la plantele din familia Rosaceae sunt:",
@@ -2618,7 +2618,7 @@
                 "Pyrus sp.;",
                 "Cerasus sp.;"
             ],
-            "correct": 2
+            "correct": 3
         },
         {
             "text": "În subfamilia Rosoideae este inclus genul:",
@@ -2628,7 +2628,7 @@
                 "Pyrus sp.;",
                 "Cerasus sp.;"
             ],
-            "correct": 2
+            "correct": 1
         },
         {
             "text": "Plantele din familia Rosaceae pot fi:",
@@ -2658,7 +2658,7 @@
                 "foliculă;",
                 "poamă."
             ],
-            "correct": 0
+            "correct": 3
         },
         {
             "text": "Colchicina, extrasă de la Colchicum autumnale, se folosește în:",
@@ -2708,7 +2708,7 @@
                 "bacă;",
                 "capsulă."
             ],
-            "correct": 0
+            "correct": 2
         },
         {
             "text": "În care dintre următoarele categorii ecologice se încadrează numeroase plante din familia \nLiliaceae:",
@@ -2738,7 +2738,7 @@
                 "bulbotuter;",
                 "tubercul."
             ],
-            "correct": 0
+            "correct": 1
         },
         {
             "text": "Tulpina Liliaceelor poate fi metamorfozată în:",
@@ -2818,7 +2818,7 @@
                 "Lacerta viridis",
                 "Podarcis muralis"
             ],
-            "correct": 2
+            "correct": 0
         },
         {
             "text": "Care dintre speciile listate face parte din subordinul Serpentes?",
@@ -2838,7 +2838,7 @@
                 "Natrix natrix",
                 "Hyla arborea"
             ],
-            "correct": 1
+            "correct": 0
         },
         {
             "text": "Care dintre speciile de mai jos face parte din subordinul Lacertilia?",
@@ -2858,7 +2858,7 @@
                 "Natrix tessellata",
                 "Niciuna"
             ],
-            "correct": 2
+            "correct": 1
         },
         {
             "text": "Care dintre speciile listate face parte din ordinul Passeriformes?",
@@ -2878,7 +2878,7 @@
                 "Phalacrocorax carbo (Cormoran mare)",
                 "Corvus frugilegus (Cioară de semănătură)"
             ],
-            "correct": 2
+            "correct": 3
         },
         {
             "text": "Care dintre speciile de mai jos face parte din ordinul Passeriformes?",
@@ -2908,7 +2908,7 @@
                 "Garrulus glandarius (Gaița)",
                 "Niciuna"
             ],
-            "correct": 3
+            "correct": 2
         },
         {
             "text": "Curbele de supraviețuire a indivizilor dintr-o populație sunt reprezentarea grafică a:",
@@ -2928,7 +2928,7 @@
                 "număr indivizi / m3;",
                 "număr indivizi / ha."
             ],
-            "correct": 0
+            "correct": 3
         },
         {
             "text": "Densitatea unei populații de Unio crassus (scoica de râu) se măsoară în:",
@@ -3108,7 +3108,7 @@
                 "între ultima reproducere și moarte;",
                 "între prima și ultima reproducere."
             ],
-            "correct": 2
+            "correct": 0
         },
         {
             "text": "Referitor la clasele de vârstă existente la plante, plantele generative sunt:",
@@ -3138,7 +3138,7 @@
                 "semințele abia germinate;",
                 "plante dezvoltate vegetativ care nu mai au capacitate generativă."
             ],
-            "correct": 1
+            "correct": 0
         },
         {
             "text": "Vârsta indivizilor unei populații se apreciază diferit. De exemplu, la moluștele bivalve, vârsta se \napreciază după:",
@@ -3178,7 +3178,7 @@
                 "indivizi din ambele specii (de pradă și prădător);",
                 "indivizi dintr-o specie neutră atât față de specia pradă cât și față de specia prădător."
             ],
-            "correct": 0
+            "correct": 2
         },
         {
             "text": "În lipsa unei forțe externe, oricât de mari ar fi oscilațiile numerice, valorile efectivelor populațiilor \npradă și prădători revin periodic la:",
@@ -3198,7 +3198,7 @@
                 "dinamica sistemului pradă – prădător urmează două curbe sinusoide, ușor decalate una fata de \ncealaltă si care se repeta la anumite intervale de timp, doar dacă sistemul nu este perturbat de forțe \nexterne.",
                 "doar în prezența unei forțe externe perturbatoare dinamica sistemului pradă – prădător va urma \ndouă curbe sinusoide."
             ],
-            "correct": 3
+            "correct": 2
         },
         {
             "text": "Pentru a studia în laborator relația pradă – prădător, cercetătorul Gause a folosit următoarele două \nspecii:",
@@ -3238,7 +3238,7 @@
                 "este factor al selecției naturale, determinând în timp apariția de adaptări ale speciilor pradă și \nprădătoare;",
                 "nu este factor de reglare a mărimii populațiilor."
             ],
-            "correct": 3
+            "correct": 2
         },
         {
             "text": "S-a constatat ca tratarea îndelungată a unei păduri cu insecticide (pentru combaterea insectelor \nxilofage) a avut ca urmare în timp:",
@@ -3288,7 +3288,7 @@
                 "sunt suportate de toate speciile, temperatura nefiind un factor de mediu limitativ;",
                 "sunt suportate doar de animalele homeoterme."
             ],
-            "correct": 3
+            "correct": 1
         },
         {
             "text": "Nevertebrate, reptilele și amfibienii din regiunea temperată își petrec sezonul rece (la scăderea \ntemperaturii și dispariția hranei):",
@@ -3298,7 +3298,7 @@
                 "intrând în adăposturi unde dorm marea majoritate a timpului (somn de iarnă) și din care ies în \ntimpul zilelor cu soare;",
                 "migrând spre zonele tropicale și subtropicale."
             ],
-            "correct": 1
+            "correct": 0
         },
         {
             "text": "Organismele euriterme:",
@@ -3318,7 +3318,7 @@
                 "au temperatura mediului intern constantă, situată între 37 – 400C;",
                 "sunt specii de plante, nevertebrate, pești, reptile, amfibieni."
             ],
-            "correct": 0
+            "correct": 2
         },
         {
             "text": "Organismele poichiloterme:",
@@ -3358,7 +3358,7 @@
                 "este acea temperatura la care toate procesele metabolice ale unui individ se realizează cu \neficiență maximă (cu pierderi minime de energie);",
                 "este identică la toate speciile cu temperatura optimă fiziologică."
             ],
-            "correct": 3
+            "correct": 1
         },
         {
             "text": "Temperatura optimă fiziologică:",
@@ -3388,7 +3388,7 @@
                 "nișa este un hipervolum în n-dimensiuni, în care trăiește o anumită specie, dimensiunile fiind \nreprezentate de către factorii de mediu și toate relațiile speciei cu mediul respectiv, biotic și abiotic;",
                 "nișa reprezintă locul acelei specii în cadrul lanțului trofic din care face parte."
             ],
-            "correct": 3
+            "correct": 2
         },
         {
             "text": "Ecosisteme naturale de complexitate inferioară (incomplete, minore):",
@@ -3568,7 +3568,7 @@
                 "se caracterizează la început prin dominanța heterotrofelor și începe într-un mediu predominant \norganic;",
                 "este cel mai des întâlnită în natură."
             ],
-            "correct": 3
+            "correct": 2
         },
         {
             "text": "Succesiunea primară:",
@@ -3578,7 +3578,7 @@
                 "este stadiul final al unei succesiuni ecologice;",
                 "este stadiul inițial al unei succesiuni ecologice."
             ],
-            "correct": 2
+            "correct": 0
         },
         {
             "text": "Succesiunea se caracterizează prin:",
@@ -3608,7 +3608,7 @@
                 "Pachiten",
                 "Diakinesis"
             ],
-            "correct": 0
+            "correct": 1
         },
         {
             "text": "Celulele care intra in diviziunea a doua a meiozei sunt:",
@@ -3618,7 +3618,7 @@
                 "Diploide cu cromozomi monocromatidici",
                 "Diploide cu cromozomi bicromatidici"
             ],
-            "correct": 0
+            "correct": 1
         },
         {
             "text": "Crossing-overul are loc la nivelul:",
@@ -3628,7 +3628,7 @@
                 "Telomerelor",
                 "Niciuna"
             ],
-            "correct": 3
+            "correct": 1
         },
         {
             "text": "Diviziunea a II a meiozei incepe:",
@@ -3638,7 +3638,7 @@
                 "Dupa anafaza diviziunii I",
                 "Niciuna"
             ],
-            "correct": 3
+            "correct": 0
         },
         {
             "text": "Fenomenul de crossing-over, caracteristic meiozei, are loc in:",
@@ -3648,7 +3648,7 @@
                 "Pachiten",
                 "Diakinesis"
             ],
-            "correct": 0
+            "correct": 2
         },
         {
             "text": "In metafaza I cromozomii sunt:",
@@ -3658,7 +3658,7 @@
                 "Tetracromatidici",
                 "Niciuna"
             ],
-            "correct": 3
+            "correct": 0
         },
         {
             "text": "Meioza are 2 diviziuni successive in urma carora se formeaza:",
@@ -3668,7 +3668,7 @@
                 "Jumatate dintre celule vor fi diploide si jumatate haploide",
                 "Niciuna"
             ],
-            "correct": 3
+            "correct": 1
         },
         {
             "text": "Meioza are loc la nivelul:",
@@ -3678,7 +3678,7 @@
                 "Hipotalamusului",
                 "Toate"
             ],
-            "correct": 3
+            "correct": 0
         },
         {
             "text": "Pe parcursul citokinezei, inelul contractil este format din:",
@@ -3768,7 +3768,7 @@
                 "Concomitent ajung şi protonii formaţi prin fotoliză apei;",
                 "NADP+ se transformă într-un agent reducător, NADPH2, care împreună cu ATP va reduce CO2."
             ],
-            "correct": 1
+            "correct": 0
         },
         {
             "text": "Selectați informația incorectă cu privire la desfășurarea Ciclului Calvin Benson:",
@@ -3798,7 +3798,7 @@
                 "La acestea O2 este fixat pe PEP de PEP-carboxilaza cu formare de malat, care se acumulează în \nsucul vacuolar al celulelor din mezofil, al căror pH scade de la 6 la 4.",
                 "Malatul acumulat în sucul vacuolar este metabolizat în cursul perioadei de lumină, formându-\nse CO2 şi acid piruvic."
             ],
-            "correct": 3
+            "correct": 2
         },
         {
             "text": "La reglarea secreției tiroidiene participă:",
@@ -3818,7 +3818,7 @@
                 "hipofiza secretă TRH, care va ajunge la hipotalamus determinând eliberarea de TSH, care va \nstimula secreția de hormoni tiroidieni",
                 "hipotalamusul nu îndeplinește nici un rol"
             ],
-            "correct": 3
+            "correct": 1
         },
         {
             "text": "Calcitonina este produsă:",
@@ -4128,7 +4128,7 @@
                 "nodulul sino-atrial, reţeaua subendocardiacă a lui His;",
                 "nici un răspuns nu este correct."
             ],
-            "correct": 3
+            "correct": 0
         },
         {
             "text": "Componentele țesutului excito-conductor nodal în inima de om sunt:",
@@ -4188,7 +4188,7 @@
                 "70-80/min;",
                 "20-30/ min."
             ],
-            "correct": 1
+            "correct": 2
         },
         {
             "text": "Faza de contracție izovolumetrică este caracteristică:",
@@ -4228,7 +4228,7 @@
                 "După o decarboxilare ulterioară şi reducerea NAD+ se formează succinatul, într-o secvenţă de \nreacţii complicate în care este produsă, ca intermediar, succinil CoA.",
                 "Succinatul se oxidează pe calea FAD la fumarat în prezenţa succinat-dehidrogenazei."
             ],
-            "correct": 3
+            "correct": 1
         },
         {
             "text": "Selectați varianta incorectă cu privire la lanțul transportor de electroni:",
@@ -4248,7 +4248,7 @@
                 "Temperaturile ridicate pot determina o scădere a coeficientului respirator în ţesuturile ce respiră \nactiv.",
                 "Când în plante se degradează substanţe grase sau proteine, coeficientul respirator este subunitar \n(QR<1)."
             ],
-            "correct": 3
+            "correct": 2
         },
         {
             "text": "Selectați varianta incorectă cu privire la efectele temperaturii asupra procesului respirator la plante:",
@@ -4436,9 +4436,19 @@
                 "Intră în compoziția acizilor nucleici;",
                 "Întărește doar membranele celulare;",
                 "Intră în compoziția proteinelor;",
-                "Este principalul nutrient necesar dezvoltării. \n                                     . \nSelectați varianta corectă cu privire la azotul din plante: \nA) Plantele lemnoase nu utilizează azotul liber; \nB) Excesul de azot determină micșorarea organelor vegetative; \nC) Carența se traduce, printre altele, în sensibilizarea plantei la boli; \nD) Excesul de azot determină sensibilizare la ger sau secetă."
+                "Este principalul nutrient necesar dezvoltării." 
             ],
             "correct": 1
+        },
+        {
+            "text": "Selectați varianta corectă cu privire la azotul din plante:",
+            "options": [
+                "Plantele lemnoase nu utilizează azotul liber;",
+                "Excesul de azot determină micșorarea organelor vegetative;",
+                "Carența se traduce, printre altele, în sensibilizarea plantei la boli;",
+                "Excesul de azot determină sensibilizare la ger sau secetă."
+            ],
+            "correct": 3
         },
         {
             "text": "Selectați varianta incorectă cu privire la rolul elementelor minerale abosrbite din mediu:",
@@ -4487,6 +4497,106 @@
                 "Ionii de K+, Cl-, H2PO4- sunt mobili şi trec din mezofil în floem;",
                 "Ionii de Ca2+ nu ajung în floem pentru că sunt mai puţin mobili.",
                 "În unele cazuri se constată fenomenul de eliminare a elementelor minerale din plantă, în mediul \nextern, numit eluție."
+            ],
+            "correct": 3
+        },
+        {
+            "text": "S-a constatat că o secțiune de ADN dublu catenar are 60 de baze guanină și 30 de baze adenină.",
+            "options": [
+                "30",
+                "180",
+                "90",
+                "60"
+            ],
+            "correct": 1
+        },
+        {
+            "text": "Termenii de mai jos descriu diferite structuri în care ADN-ul poate fi organizat în interiorul celulelor:\n1. Cromozom linear\n2. Cromozom circular\n3. Plasmid circular\n Care dintre acești termeni descriu modul în care ADN-ul este organizat în celulele bacteriene?",
+            "options": [
+                "Doar 1",
+                "Doar 1 și 2",
+                "Doar 2 și 3",
+                "Doar 3"
+            ],
+            "correct": 2
+        },
+        {
+            "text": "Numiți substanța cu care este împachetat ADN-ul la eucariote.",
+            "options": [
+                "Histone",
+                "Material genetic",
+                "ADN polimerază",
+                "Promotor"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "De ce este importantă organizarea cromatinei?",
+            "options": [
+                "Ajută la sinteza proteinelor",
+                "Reglează expresia genelor și facilitează replicarea ADN-ului",
+                "Produce ATP",
+                "Descompune produșii reziduali"
+            ],
+            "correct": 1
+        },
+        {
+            "text": "Care este metoda principală prin care este organizat ADN-ul procariotic?",
+            "options": [
+                "Modificarea histonelor",
+                "Suprarăsucirea",
+                "Formarea nucleozomilor",
+                "Remodelarea cromatinei"
+            ],
+            "correct": 1
+        },
+        {
+            "text": "Cum este ADN-ul  protejat de enzimele de restricție?",
+            "options": [
+                "Sechestrat într-un lizozom",
+                "Transformat în ARN",
+                "Metilat",
+                "Transformat în ARN dublu catenar"
+            ],
+            "correct": 2
+        },
+        {
+            "text": "Cum se numește molecula extracromozomală de ADN bacterian care se replică independent?",
+            "options": [
+                "Operon",
+                "Transpozon",
+                "Plasmidă",
+                "Cromatidă"
+            ],
+            "correct": 2
+        },
+        {
+            "text": "Cum se numește starea fiziologică care permite bacteriilor să preia ADN din mediu?",
+            "options": [
+                "Transfecție",
+                "Transducție",
+                "Competență",
+                "Transformare"
+            ],
+            "correct": 2
+        },
+        {
+            "text": "Cea mai comună formă de reglare în bacterii și eucariote este:",
+            "options": [
+                "Controlul transcripțional",
+                "Controlul translațional",
+                "Controlul promotorului",
+                "Controlul operatorului"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "Cromozomul bacterian:",
+            "options": [
+                "Este situat în membrana celulară",
+                "Conține întregul ADN al celulei",
+                "Este închis într-un nucleu legat de membrană",
+                "Este un singur lanț circular de ADN în regiunea nucleoidă a celulei"
             ],
             "correct": 3
         }
