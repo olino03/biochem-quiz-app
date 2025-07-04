@@ -1158,7 +1158,7 @@
                 "Met, Lys, Asp",
                 "Lys, Met, Asp"
             ],
-            "correct": 1
+            "correct": 3
         },
         {
             "text": "Cromatografia unidimensională pe hârtie a unui amestec format din Asp, Val, Gln este realizată \nîntr‑un sistem de solvenţi conţinând _n-_butanol, apă şi acid acetic. Indicaţi mobilităţile relative \nale aminoacizilor în sistemul descris, în ordinea migrării, primul fiind considerat cel care a migrat \ncel mai departe de origine.",
@@ -1418,7 +1418,7 @@
                 "gruparea  metil",
                 "datorită faptului că fructozo-1,6-bisfosfatul se scindează în 2 molecule cu 3 atomi de carbon, \ncare apoi merg împreună, prin izomerizare, în secvența glicolitică, carbonul marcat apare atât la \ngruparea carboxil, cât și la gruparea metil ale piruvatului"
             ],
-            "correct": 3
+            "correct": 2
         },
         {
             "text": "_Gliceraldehid-3-fosfat dehidrogenaza_ poate folosi arsenat în loc de fosfat ca substrat. Produsul \nrezultat este 1-arseno-3-fosfoglicerat, un compus foarte instabil care se hidrolizează rapid la \narsenat și 3-fosfoglicerat. Pornind de la 1 moleculă de glucoză, câte molecule de ATP se obțin în \nglicoliză, dacă în loc de fosfat se folosește ca substrat arsenatul?",
@@ -1438,7 +1438,7 @@
                 "glicerol + NAD+ + 2 ADP + 2 Pa → acid lactic + NADH + H+ + 2 ATP + 2 H2O",
                 "glicerol + 2 NAD+ + 2 ADP + 2 Pa → acid lactic + 2 NADH + 2 H+ + 2 ATP + 2 H2O"
             ],
-            "correct": 3
+            "correct": 0
         },
         {
             "text": "Câte molecule de ATP se obțin prin trecerea prin fermentația zaharozei până la etanol și CO2?",
@@ -1458,7 +1458,7 @@
                 "4",
                 "6"
             ],
-            "correct": 1
+            "correct": 0
         },
         {
             "text": "Care din următoarele ecuații stoechiometrice este valabilă pentru trecerea prin fermentație a \ngliceraldehidei la etanol și CO2?",
@@ -1558,7 +1558,7 @@
                 "3",
                 "4"
             ],
-            "correct": 0
+            "correct": 2
         },
         {
             "text": "Acidul citric a fost adăugat la suspensii de mitocondrii de ficat de şobolan, în care _succinat \ndehidrogenaza_ a fost complet inhibată prin adăugare de malonat. Considerând că este suficientă \nprovizia de glicogen, care din următoarele reacţii de trecere la acidul succinic este corectă?",
