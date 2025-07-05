@@ -16,6 +16,20 @@ const prevButton = document.getElementById('prev-button');
 const homeButton = document.getElementById('home-button');
 const backToHomeButton = document.getElementById('back-to-home');
 
+// Create slider element
+const questionSlider = document.createElement('input');
+questionSlider.type = 'range';
+questionSlider.id = 'question-slider';
+questionSlider.className = 'w-full';
+
+const sliderContainer = document.createElement('div');
+sliderContainer.id = 'slider-container';
+sliderContainer.className = 'w-full mb-6 px-4';
+sliderContainer.appendChild(questionSlider);
+
+// Insert after timer in quiz container
+timerDiv.insertAdjacentElement('afterend', sliderContainer);
+
 // --- THEME TOGGLE ELEMENTS ---
 const moonIcon = document.getElementById('moon-icon');
 const sunIcon = document.getElementById('sun-icon');
@@ -78,6 +92,12 @@ document.addEventListener('DOMContentLoaded', () => {
     displayLandingPage();
   });
   prevButton.addEventListener('click', prevQuestion);
+  
+  // Add slider event listener
+  questionSlider.addEventListener('input', function() {
+    currentIndex = parseInt(this.value);
+    renderQuestion();
+  });
 
   // Load quiz questions
   loadQuestions().then(() => {
@@ -132,6 +152,11 @@ function startQuiz() {
   landingPage.classList.add('hidden');
   quizContainer.classList.remove('hidden');
 
+  // Configure slider
+  questionSlider.min = 0;
+  questionSlider.max = selectedQuestions.length - 1;
+  questionSlider.value = 0;
+
   if (quizMode === 'test') {
     timerDiv.classList.remove('hidden');
     homeButton.style.display = 'none';
@@ -159,6 +184,9 @@ function renderQuestion() {
   feedbackDiv.innerText = "";
   feedbackDiv.className = "mt-6 text-lg font-bold text-center";
 
+  // Update slider position
+  questionSlider.value = currentIndex;
+
   optionsDiv.innerHTML = "";
   question.options.forEach((option, idx) => {
     const btn = document.createElement("button");
@@ -169,8 +197,36 @@ function renderQuestion() {
     if (quizMode === 'test' && userAnswers[currentIndex] === idx) {
       btn.classList.add('selected-answer');
     }
+    
+    // In training mode, show correct/incorrect if already answered
+    if (quizMode === 'training' && userAnswers[currentIndex] !== null) {
+      btn.disabled = true;
+      if (idx === question.correct) {
+        btn.classList.add('correct-answer');
+      } else if (idx === userAnswers[currentIndex] && idx !== question.correct) {
+        btn.classList.add('incorrect-answer');
+      }
+    }
+    
     optionsDiv.appendChild(btn);
   });
+  
+  // Show feedback if already answered in training mode
+  if (quizMode === 'training' && userAnswers[currentIndex] !== null) {
+    const optionButtons = optionsDiv.querySelectorAll('button');
+    optionButtons.forEach(btn => btn.disabled = true);
+    optionButtons[question.correct].classList.add('correct-answer');
+    if (userAnswers[currentIndex] !== question.correct) {
+      optionButtons[userAnswers[currentIndex]].classList.add('incorrect-answer');
+      feedbackDiv.innerText = `Greșit. Răspuns corect: ${question.options[question.correct]}`;
+      feedbackDiv.classList.add('text-red-600', 'dark:text-red-400');
+    } else {
+      feedbackDiv.innerText = "Corect!";
+      feedbackDiv.classList.add('text-green-600', 'dark:text-green-400');
+    }
+    feedbackGiven = true;
+    nextButton.innerText = (currentIndex === selectedQuestions.length - 1) ? 'Finish Training' : 'Continue';
+  }
 }
 
 function selectAnswer(choice) {

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ro">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,32 +11,80 @@
       font-family: 'Inter', sans-serif;
       transition: background-color 0.3s ease, color 0.3s ease;
     }
+
     #options button {
       transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
       border: 2px solid transparent;
     }
+
     /* --- Test Mode Style --- */
     .selected-answer {
-        background-color: #3B82F6 !important; /* Blue-500 */
-        color: white !important;
-        border-color: #2563EB !important; /* Blue-600 */
+      background-color: #3B82F6 !important;
+      /* Blue-500 */
+      color: white !important;
+      border-color: #2563EB !important;
+      /* Blue-600 */
     }
+
     /* --- Training Mode Styles --- */
     .correct-answer {
-      background-color: #22c55e !important; /* Green-500 */
+      background-color: #22c55e !important;
+      /* Green-500 */
       color: white !important;
-      border-color: #16a34a !important; /* Green-600 */
+      border-color: #16a34a !important;
+      /* Green-600 */
     }
+
     .incorrect-answer {
-      background-color: #ef4444 !important; /* Red-500 */
+      background-color: #ef4444 !important;
+      /* Red-500 */
       color: white !important;
-      border-color: #dc2626 !important; /* Red-600 */
+      border-color: #dc2626 !important;
+      /* Red-600 */
     }
+
     /* --- Summary Screen Styles --- */
-    .summary-correct { background-color: #dcfce7; }
-    .dark .summary-correct { background-color: #166534; }
-    .summary-incorrect { background-color: #fee2e2; }
-    .dark .summary-incorrect { background-color: #991b1b; }
+    .summary-correct {
+      background-color: #dcfce7;
+    }
+
+    .dark .summary-correct {
+      background-color: #166534;
+    }
+
+    .summary-incorrect {
+      background-color: #fee2e2;
+    }
+
+    .dark .summary-incorrect {
+      background-color: #991b1b;
+    }
+
+    /* Add to existing styles */
+    #question-slider {
+      -webkit-appearance: none;
+      height: 8px;
+      border-radius: 4px;
+      background: #d1d5db;
+      outline: none;
+    }
+
+    #question-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #3B82F6;
+      cursor: pointer;
+    }
+
+    .dark #question-slider {
+      background: #4b5563;
+    }
+
+    .dark #question-slider::-webkit-slider-thumb {
+      background: #60a5fa;
+    }
   </style>
   <script>
     tailwind.config = {
@@ -53,26 +102,32 @@
   </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col items-center justify-center p-4 transition-colors duration-300">
+
+<body
+  class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col items-center justify-center p-4 transition-colors duration-300">
 
   <!-- Theme Toggle Button -->
-  <button id="darkModeToggle" class="absolute top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 shadow-md focus:outline-none transition-colors">
+  <button id="darkModeToggle"
+    class="absolute top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 shadow-md focus:outline-none transition-colors">
     <i id="moon-icon" class="fas fa-moon"></i>
     <i id="sun-icon" class="fas fa-sun hidden"></i>
   </button>
 
   <!-- Landing Page -->
-  <div id="landing-page" class="w-full max-w-md bg-white dark:bg-dark-primary rounded-lg shadow-xl p-8 text-center transition-all duration-300 ease-in-out">
+  <div id="landing-page"
+    class="w-full max-w-md bg-white dark:bg-dark-primary rounded-lg shadow-xl p-8 text-center transition-all duration-300 ease-in-out">
     <h1 class="text-4xl font-extrabold mb-2 text-gray-800 dark:text-gray-100">Quiz Biologie</h1>
     <p class="text-lg mb-6 text-gray-600 dark:text-gray-300">Alege modul</p>
-    
+
     <div class="flex flex-col space-y-4 mb-8">
-        <button id="startTrainingButton" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out">
-          Antrenează-te
-        </button>
-        <button id="startTestButton" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out">
-          Testează-te
-        </button>
+      <button id="startTrainingButton"
+        class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out">
+        Antrenează-te
+      </button>
+      <button id="startTestButton"
+        class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out">
+        Testează-te
+      </button>
     </div>
 
     <div id="success-rate-container" class="p-4 bg-gray-100 dark:bg-dark-secondary rounded-md shadow-inner">
@@ -82,20 +137,26 @@
   </div>
 
   <!-- Quiz Container -->
-  <div id="quiz-container" class="hidden w-full max-w-2xl bg-white dark:bg-dark-primary rounded-lg shadow-xl p-8 transition-all duration-300 ease-in-out">
+  <div id="quiz-container"
+    class="hidden w-full max-w-2xl bg-white dark:bg-dark-primary rounded-lg shadow-xl p-8 transition-all duration-300 ease-in-out">
     <div id="timer" class="text-center text-xl font-semibold mb-6 text-red-600 dark:text-red-400"></div>
+    <div id="slider-container" class="w-full mb-6 px-4">
+    </div>
     <div id="question-number" class="text-lg font-bold mb-4 text-gray-700 dark:text-gray-200"></div>
     <div id="question-text" class="text-2xl font-semibold mb-6 text-gray-900 dark:text-gray-100"></div>
     <div id="options" class="space-y-4"></div>
     <div id="feedback" class="mt-6 text-lg font-bold text-center"></div>
     <div class="navigation flex justify-between items-center mt-8">
-      <button onclick="prevQuestion()" id="prev-button" class="bg-gray-300 hover:bg-gray-400 dark:bg-dark-secondary dark:hover:bg-dark-accent text-gray-800 dark:text-gray-200 font-bold py-2 px-6 rounded-full shadow-md transition-colors">
+      <button onclick="prevQuestion()" id="prev-button"
+        class="bg-gray-300 hover:bg-gray-400 dark:bg-dark-secondary dark:hover:bg-dark-accent text-gray-800 dark:text-gray-200 font-bold py-2 px-6 rounded-full shadow-md transition-colors">
         Înapoi
       </button>
-      <button id="home-button" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-6 rounded-full shadow-md transition-colors">
+      <button id="home-button"
+        class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-6 rounded-full shadow-md transition-colors">
         Acasă
       </button>
-      <button onclick="nextQuestion()" id="next-button" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full shadow-md transition-colors">
+      <button onclick="nextQuestion()" id="next-button"
+        class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full shadow-md transition-colors">
         Înainte
       </button>
     </div>
@@ -109,11 +170,13 @@
     <p id="summary-score" class="text-2xl text-center font-semibold mb-6"></p>
     <div id="summary-details" class="space-y-4 max-h-96 overflow-y-auto"></div>
     <div class="text-center mt-8">
-      <button id="back-to-home" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-colors">
+      <button id="back-to-home"
+        class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-colors">
         Înapoi la început
       </button>
     </div>
   </div>
   <script src="script.js"></script>
 </body>
+
 </html>
